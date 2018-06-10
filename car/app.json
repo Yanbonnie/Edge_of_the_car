@@ -1,0 +1,33 @@
+{
+    "pages": [
+        "pages/chat/chat",
+        "pages/chat_list/chat_list",
+        "pages/index2/index2",
+        "pages/index/index",
+        "pages/logs/logs"        
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#6c87ef",
+        "navigationBarTitleText": "人车缘",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#969696",
+        "selectedColor": "#6683eb",
+        "list": [
+            {
+                "pagePath": "pages/index2/index2",
+                "iconPath": "/assets/images/home.png",
+                "selectedIconPath": "/assets/images/home_active.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/logs/logs",
+                "iconPath": "/assets/images/bargain.png",
+                "selectedIconPath": "/assets/images/bargain_active.png",
+                "text": "今日特价"
+            }
+        ]
+    }
+}

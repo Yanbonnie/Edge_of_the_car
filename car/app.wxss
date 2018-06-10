@@ -1,0 +1,135 @@
+/**app.wxss**/
+/*activecolor  #6884ec;  
+    bordercolor: #e5e5e5;
+*/
+
+/*color*/
+.fontRed{
+    color: #ff5555;
+}
+.margin-left10{
+    margin-left:10rpx; 
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+page{
+    width: 100%;
+    height: 100%;
+}
+text,view{
+    font-size: 24rpx;
+}
+.blank{
+    background: #6c87ef;
+    height: 30rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.containBox{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between; 
+    flex-basis: 80rpx;
+    height: 80rpx;
+}
+.nav view{
+    flex-grow: 1;
+    padding: 0 20rpx;
+    line-height: 80rpx;
+}
+.nav .flexR{
+    text-align: right;
+}
+
+.clearfix {
+  overflow: auto;
+  _height: 1%;
+}
+
+.shengl{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*列表  */
+.list-item{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20rpx;
+    display: flex;
+    padding: 20rpx;
+    align-items: center;
+    background: #ebefff;
+    border-radius: 15rpx;
+}
+.list-item .flexL{
+    flex-basis: 120rpx;
+    overflow: hidden;
+    text-align: center;
+    align-items: center;
+}
+.list-item .flexL image{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 100%;
+}
+.list-item .flexC {
+    flex-grow: 1;
+    padding-left: 20rpx;
+    overflow: hidden;
+}
+.list-item .flexC .title{
+    color: #6a6a6a;
+}
+.list-item .num{
+    color: #969696;
+}
+.list-item .num text{
+    color: #ff5555;
+}
+.list-item .starBox{
+    display: flex;
+}
+.list-item .starBox text{
+    font-size: 20rpx;
+    color: #969696;
+}
+.list-item .flexC .star{
+    flex-basis:40rpx;
+
+}
+.list-item .flexC .star image{
+    width: 19rpx;
+    height: 19rpx;
+}
+.list-item .flexR{
+    flex-basis: 120rpx;
+    text-align: center;
+    align-self: flex-start;
+}
+.list-item .flexR .chat{
+    width: 32rpx;
+    height: 26rpx;
+}

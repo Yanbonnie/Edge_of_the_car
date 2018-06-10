@@ -1,0 +1,95 @@
+/* pages/chat/chat.wxss */
+.chat{
+    display: flex;
+    flex-direction:column;
+    height: 100%;
+}
+.chat .panel{
+     width: 90%; 
+     margin: 0 auto;
+     margin-top: 30rpx;
+     border: 1px #e5e5e5 solid;
+     border-top-left-radius: 20rpx;
+     border-top-right-radius: 20rpx;
+}
+.chat .panel .list-item{
+     width: 100%; 
+     padding: 20rpx 0;
+    margin-top: 0;
+    
+}
+.chat .panel .flexR{
+    align-self: center;
+    flex-basis: 180rpx;
+}
+.chat .panel .flexR text{
+    border: 1px #5979e4 solid;
+    display: block;
+    line-height: 50rpx;
+    border-radius: 40rpx;
+    color: #5979e4;
+    width: 130rpx;
+}
+.chat .panel .flexBox{
+    padding: 20rpx 0;
+}
+.chat .panel .flexWrap{
+    display: flex;
+    flex-direction: row;
+    padding: 8rpx 50rpx;
+}
+.chat .panel .flexWrap view{
+    flex-grow: 1;
+}
+.chat .panel .flexWrap .flexR{
+    text-align: right;
+}
+.chat .panel .flexWrap .flexR image{
+    width: 25rpx;
+    height: 30rpx;
+}
+.chat .chat_view{
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+}
+.chat .chat_view .chitchat{
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+.chat .info_box{
+    flex-basis: 100rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f7ff;
+    border-top: 1px #e5e5e5 solid;
+}
+.chat .info_box input{
+    flex-grow: 1;
+    padding-left: 40rpx;
+}
+.chat .info_box view{
+    flex-basis: 200rpx;
+}
+.chat .info_box view text{
+    border: 1rpx #6b86ee solid;
+    border-radius: 40rpx;
+    height:50rpx;
+    color: #6b86ee;
+    line-height: 50rpx;
+    width: 120rpx;
+    display:inline-block;
+    text-align: center;
+}
+
+
+.comment image{
+    width: 19rpx;
+    height: 19rpx;
+    margin-left: 10rpx;
+}

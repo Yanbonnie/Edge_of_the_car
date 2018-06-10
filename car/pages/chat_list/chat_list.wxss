@@ -1,0 +1,7 @@
+/* pages/chat_list/chat_list.wxss */
+.list-item .flexR{
+    flex-basis: 200rpx;
+}
+.list-item .flexR text{
+    color: #b8b8b8;
+}

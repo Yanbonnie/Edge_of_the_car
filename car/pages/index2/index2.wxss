@@ -1,0 +1,46 @@
+/* pages/index2/index2.js.wxss */
+.index{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.index .line{
+    flex-basis: 10rpx;
+    width: 100%;
+    background: #ebefff;
+}
+.index .tabNav{
+    display: flex;
+    border-bottom: 1px #e5e5e5 solid;
+    flex-basis: 90rpx;
+}
+.index .tabNav view{
+    flex-grow: 1;    
+    text-align: center;
+     padding:20rpx 0; 
+}
+.index .tabNav .active{
+    border-bottom: 2px #6884ec solid;
+}
+.index .tabNav .active text{
+    color: #6884ec;
+}
+.index .tabNav view text{
+    display: block;
+}
+.index .tabNav view text:nth-child(2){
+    font-size: 16rpx;
+}
+.listBox{
+    flex-grow: 1; 
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+}
+.listBox .scrollView{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}

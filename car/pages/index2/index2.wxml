@@ -1,0 +1,54 @@
+<!--pages/index2/index2.js.wxml-->
+<view class='blank'></view>
+<view class='containBox'>
+    <view class='nav'>
+        <view class='flexL'>广州</view>
+        <view class='flexR'>品牌</view>
+    </view>
+    <view class='index'>
+        <view class='line'></view>
+        <view class='tabNav'>
+            <view class='active'>
+                <text>高级技工</text>
+                <text>Mechanic</text>
+            </view>
+            <view>
+                <text>原厂配件</text>
+                <text>Fittings</text>
+            </view>
+            <view>
+                <text>新车置换</text>
+                <text>replacement</text>
+            </view>
+        </view>
+
+        <view class='listBox'>
+            <scroll-view style="width:100%;height:100%;display:block;" class='scrollView' scroll-y="true">
+                <view class='list'>
+                    <view class='list-item' wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:key="{{index}}">
+                        <view class='flexL'>
+                            <image src="/assets/images/picture.jpg"></image>
+                        </view>
+                        <view class='flexC'>
+                            <view class='title'>小李子</view>
+                            <view class='num'>
+                                <text>530</text>
+                                人找他咨询
+                            </view>
+                            <view class='starBox'>
+                                <view class='star'>
+                                    <image src='/assets/images/start_on.png' class='star'></image>
+                                </view>
+                                <text class='shengl'>4s-广州每期雪佛兰</text>
+                            </view>
+                        </view>
+                        <view class='flexR'>
+                            <image class='chat' src='/assets/images/chat.png'></image>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+
+    </view>
+</view>

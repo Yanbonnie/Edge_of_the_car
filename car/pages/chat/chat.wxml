@@ -1,0 +1,55 @@
+<!--pages/chat/chat.wxml-->
+<view class="chat">
+    <view class='panel'>
+        <view class='list-item'>
+            <view class='flexL'>
+                <image src="/assets/images/picture.jpg"></image>
+            </view>
+            <view class='flexC'>
+                <view class='title'>小李子</view>
+                <view class='num'>
+                    <text>530</text>
+                    人找他咨询
+                </view>
+                <view class='starBox'>
+                    <view class='star'>
+                        <image src='/assets/images/start_on.png' class='star'></image>
+                    </view>
+                    <text class='shengl'>4s-广州每期雪佛兰</text>
+                </view>
+            </view>
+            <view class='flexR'>
+                <text>推荐TA</text>
+            </view>
+        </view>
+        <view class='flexBox'>
+            <view class='flexWrap'>
+                <view class='flexL'>电话：18825039689</view>
+                <view class='flexR'><image src="/assets/images/phone.png"></image></view>
+            </view>
+            <view class='flexWrap comment'>
+                <view class='flexL'>评价：
+                    <image src='/assets/images/start_on.png'></image>
+                    <image src='/assets/images/start_on.png'></image>
+                    <image src='/assets/images/start_on.png'></image>
+                    <image src='/assets/images/start_on.png'></image>
+                    <image src='/assets/images/start_on.png'></image>
+                    <image src='/assets/images/start_on.png'></image>
+                    <text class='fontRed margin-left10'>4.8</text>
+                </view>
+                <view class='flexR'><image style='width:17rpx;' src="/assets/images/right_icon.png"></image></view>
+            </view>
+        </view>
+    </view>
+    <view class='chat_view'>
+        <view class='chitchat'>
+            <scroll-view style='height:100%;' scroll-y="true">
+                <view wx:for="{{[1,2,3,4,5,6,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,44,4,4,4,1,2,3,4,5,6,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,44,4,4,4]}}" wx:key="{{index}}">开心</view>
+            </scroll-view>
+        </view>
+    </view>
+    <view class='info_box'>
+        <input placeholder="请输入" />
+        <view><text>发送</text></view>
+    </view>
+</view>
