@@ -1,7 +1,8 @@
 {
     "pages": [
-        "pages/comment/comment",
         "pages/comment_list/comment_list",        
+        "pages/comment/comment",
+        
         "pages/chat/chat",
         "pages/chat_list/chat_list",
         "pages/index2/index2",
