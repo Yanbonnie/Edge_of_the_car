@@ -1,0 +1,17 @@
+<!--pages/card/card.wxml-->
+<view class='card'>
+    <view class='blank'></view>
+    <view class='radiusTop'></view>
+    <image class="bg" src="/assets/images/card.jpg"></image>
+    <view class='logo'><image src='/assets/images/ad.png'></image></view>
+    <view class='tabNav'>
+        <view>
+            <image src='/assets/images/home_white.png' style='width:35rpx;height:35rpx;'></image>
+            <text>首页</text>
+        </view> 
+        <view>
+            <image src='/assets/images/share.png' style='width:35rpx;height:35rpx;'></image>
+            <text>分享</text>
+        </view>
+    </view>
+</view>

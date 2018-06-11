@@ -11,15 +11,16 @@
 .comment .labelBox view{
     flex-grow: 1;
     text-align: center;
-    margin-bottom: 20rpx;
+    margin-bottom: 25rpx;
 }
 .comment .labelBox view text{
-    width: 200rpx;
-    line-height: 60rpx;
+    width: 180rpx;
+    line-height: 50rpx;
     border: 1px #e5e5e5 solid;
     border-radius: 50rpx;
     text-align: center;
     display: inline-block;
+    font-size: 20rpx;
 
 }
 .comment-item{
@@ -35,6 +36,7 @@
 }
 .comment-item .flexR{
     flex-basis: 200rpx;
+    color: #b8b8b8;
 }
 .send_comment{ 
     flex-grow: 1;

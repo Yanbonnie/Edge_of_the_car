@@ -1,5 +1,7 @@
 <!--pages/comment/comment.wxml-->
 <view class="chat comment">
+    <view class='blank'></view>
+    <view class='radiusTop'></view>
     <view class='panel'>
         <view class='list-item'>
             <view class='flexL'>

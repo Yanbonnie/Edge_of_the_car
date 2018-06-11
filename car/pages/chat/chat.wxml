@@ -1,5 +1,7 @@
 <!--pages/chat/chat.wxml-->
 <view class="chat">
+    <view class='blank'></view>
+    <view class='radiusTop'></view>
     <view class='panel'>
         <view class='list-item'>
             <view class='flexL'>

@@ -1,5 +1,7 @@
 <!--pages/comment/comment.wxml-->
 <view class="chat comment comment_list">
+    <view class='blank'></view>
+    <view class='radiusTop'></view>
     <view class='panel'>
         <view class='list-item'>
             <view class='flexL'>
@@ -25,36 +27,33 @@
     </view>
     <view class='chat_view'>
         <view class='chitchat'>
-            <scroll-view class='chatList' scroll-y="true" style='height:100%;'>
+            <view class='comment_ta'>
+                <view class='title'>星级点评</view>
+                <view>
+                    <image src="/assets/images/start.png"></image>
+                    <image src="/assets/images/start.png"></image>
+                    <image src="/assets/images/start.png"></image>
+                    <image src="/assets/images/start.png"></image>
+                    <image src="/assets/images/start.png"></image>
+                </view>
+            </view>
+            
+            <view class='chatList'>
+                <view class='title'>对他的印象 </view>
                 <view class='labelBox'>
-                    <view><text>服务热情176</text></view>
-                    <view><text>有责任心142</text></view>
-                    <view><text>非常专业185</text></view>
+                    <view><text class='active'>服务热情</text></view>
+                    <view><text>有责任心</text></view>
+                    <view><text>非常专业</text></view>
                 </view>
                 <view class='labelBox'>
-                    <view><text>回复及时452</text></view>
-                    <view><text>态度诚恳988</text></view>
-                    <view><text>有亲和力142</text></view>
+                    <view><text>回复及时</text></view>
+                    <view><text>态度诚恳</text></view>
+                    <view><text>有亲和力</text></view>
                 </view>
                 <view class='comment_list'>
-                    <view class='comment-item' wx:for="[1,1,1,11,1,11,1,11,1,1,11,1,1,11,]" wx:key="index">
-                        <view class='flexL'>
-                            <text>小小</text>
-                            <view>
-                                <image src="/assets/images/start_on.png"></image>
-                                <image src="/assets/images/start_on.png"></image>
-                                <image src="/assets/images/start_on.png"></image>
-                                <image src="/assets/images/start_on.png"></image>
-                                <image src="/assets/images/start_on.png"></image>
-                                <image src="/assets/images/start_on.png"></image>
-                            </view>
-                        </view>
-                        <view class='flexR'>
-                            2018-06-11
-                        </view>
-                    </view>
+                    <textarea placeholder="请输入" />
                 </view>
-            </scroll-view>   
+            </view>   
         </view>
     </view>
     <view class='info_box'>

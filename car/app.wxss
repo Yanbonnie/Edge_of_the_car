@@ -26,6 +26,7 @@ page{
 }
 text,view{
     font-size: 24rpx;
+    color: #6a6a6a;
 }
 .blank{
     background: #6c87ef;
@@ -34,6 +35,16 @@ text,view{
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 0;
+}
+.radiusTop{
+    background: #fff;
+    width: 100%;
+    min-height: 30rpx;
+    z-index: 1;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    position: relative;
 }
 .containBox{
     width: 100%;

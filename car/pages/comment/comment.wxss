@@ -3,3 +3,49 @@
 .comment_list .panel{
     border: 0;
 }
+.chat .chat_view .chitchat{
+    padding: 0;
+    height: 100%;
+}
+.comment_ta{
+    border-bottom: 1px #e5e5e5 solid;
+    padding: 20rpx 5%;
+}
+.comment_ta .title{
+    line-height: 60rpx;
+    color: #6a6a6a;
+}
+.comment_ta image{
+    margin-left: 0;
+    margin-right: 10rpx;
+    width: 26rpx;
+    height: 26rpx;
+}
+
+.chatList{
+    padding: 15rpx 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.chatList .title{
+    color: #6a6a6a;
+    line-height: 60rpx;
+    padding-left: 5%;
+    padding-bottom: 10rpx;
+}
+.chatList .comment_list{
+    flex-grow: 1;
+    background: #f5f7ff;
+    padding: 30rpx;
+}
+.chatList .comment_list textarea{
+    width: 100%;
+}
+.comment .labelBox view .active{
+    border: 1px #6582eb solid;
+    color: #6582eb;
+} 
+.chat .info_box{
+    border: 0;
+}
