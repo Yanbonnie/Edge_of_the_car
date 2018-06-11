@@ -1,0 +1,79 @@
+<!--pages/comment/comment.wxml-->
+<view class="chat comment">
+    <view class='panel'>
+        <view class='list-item'>
+            <view class='flexL'>
+                <image src="/assets/images/picture.jpg"></image>
+            </view>
+            <view class='flexC'>
+                <view class='title'>小李子</view>
+                <view class='num'>
+                    <text>530</text>
+                    人找他咨询
+                </view>
+                <view class='starBox'>
+                    <view class='star'>
+                        <image src='/assets/images/start_on.png' class='star'></image>
+                    </view>
+                    <text class='shengl'>4s-广州每期雪佛兰</text>
+                </view>
+            </view>
+            <view class='flexR'>
+                <image src='/assets/images/phone.png'></image>
+            </view>
+        </view>
+        <view class='flexBox'>
+            <view class='flexWrap comment'>
+                <view class='flexL'>评价：
+                    <image src='/assets/images/start_on.png'></image>
+                    <image src='/assets/images/start_on.png'></image>
+                    <image src='/assets/images/start_on.png'></image>
+                    <image src='/assets/images/start_on.png'></image>
+                    <image src='/assets/images/start_on.png'></image>
+                    <image src='/assets/images/start_on.png'></image>
+                    <text class='fontRed margin-left10'>4.8</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='chat_view'>
+        <view class='chitchat'>
+            <scroll-view class='chatList' scroll-y="true" style='height:100%;'>
+                <view class='labelBox'>
+                    <view><text>服务热情176</text></view>
+                    <view><text>有责任心142</text></view>
+                    <view><text>非常专业185</text></view>
+                </view>
+                <view class='labelBox'>
+                    <view><text>回复及时452</text></view>
+                    <view><text>态度诚恳988</text></view>
+                    <view><text>有亲和力142</text></view>
+                </view>
+                <view class='comment_list'>
+                    <view class='comment-item' wx:for="[1,1,1,11,1,11,1,11,1,1,11,1,1,11,]" wx:key="index">
+                        <view class='flexL'>
+                            <text>小小</text>
+                            <view>
+                                <image src="/assets/images/start_on.png"></image>
+                                <image src="/assets/images/start_on.png"></image>
+                                <image src="/assets/images/start_on.png"></image>
+                                <image src="/assets/images/start_on.png"></image>
+                                <image src="/assets/images/start_on.png"></image>
+                                <image src="/assets/images/start_on.png"></image>
+                            </view>
+                        </view>
+                        <view class='flexR'>
+                            2018-06-11
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>   
+        </view>
+    </view>
+    <view class='info_box'>
+        <view class='send_comment'>
+            <view>发表评价</view>
+        </view>
+    </view>
+</view>
+

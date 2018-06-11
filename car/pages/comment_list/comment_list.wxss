@@ -1,0 +1,51 @@
+/* pages/comment_list/comment_list.wxss */
+@import '../chat/chat.wxss';
+.comment .list-item .flexR image{
+    width: 25rpx;
+    height: 30rpx;
+}
+
+.comment .labelBox{
+    display: flex;
+}
+.comment .labelBox view{
+    flex-grow: 1;
+    text-align: center;
+    margin-bottom: 20rpx;
+}
+.comment .labelBox view text{
+    width: 200rpx;
+    line-height: 60rpx;
+    border: 1px #e5e5e5 solid;
+    border-radius: 50rpx;
+    text-align: center;
+    display: inline-block;
+
+}
+.comment-item{
+    display: flex;
+    align-items: center;
+    padding: 20rpx 0;
+}
+.comment-item .flexL{
+    flex-grow: 1;
+}
+.comment-item .flexL text{
+    padding-left: 10rpx;
+}
+.comment-item .flexR{
+    flex-basis: 200rpx;
+}
+.send_comment{ 
+    flex-grow: 1;
+    padding:  0 50rpx;
+}
+.send_comment view{
+    display: block;
+    height: 60rpx;
+    color: #fff;
+    background: #5a7ae4;
+    border-radius: 100rpx;
+    text-align: center;
+    line-height: 60rpx;
+}

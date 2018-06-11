@@ -9,8 +9,7 @@
      margin: 0 auto;
      margin-top: 30rpx;
      border: 1px #e5e5e5 solid;
-     border-top-left-radius: 20rpx;
-     border-top-right-radius: 20rpx;
+     border-radius: 20rpx;
 }
 .chat .panel .list-item{
      width: 100%; 
@@ -54,13 +53,29 @@
     overflow: hidden;
 }
 .chat .chat_view .chitchat{
+    padding:5%;
     position: absolute;
-    height: 100%;
+    height: 90%;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
 }
+.chitchat .chat_item {
+     padding: 10rpx 20rpx; 
+}
+.chitchat .chat_item text{
+    font-size: 24rpx;
+}
+.chitchat .chat_item text:nth-child(1){font-weight: bold;}
+.chitchat .chat_item text:nth-child(2){margin-right: 10rpx;}
+.chitchat .chat_item text:nth-child(3){
+    font-size: 20rpx;
+    background: #f7f7f7;
+    padding: 0 10rpx;
+    color: #ccc;
+}
+
 .chat .info_box{
     flex-basis: 100rpx;
     display: flex;

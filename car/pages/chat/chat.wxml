@@ -43,9 +43,54 @@
     </view>
     <view class='chat_view'>
         <view class='chitchat'>
-            <scroll-view style='height:100%;' scroll-y="true">
-                <view wx:for="{{[1,2,3,4,5,6,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,44,4,4,4,1,2,3,4,5,6,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,44,4,4,4]}}" wx:key="{{index}}">开心</view>
-            </scroll-view>
+            <scroll-view class='chatList' scroll-y="true" style='height:100%;'>
+                <view class='chat_item'>
+                    <text>我：</text>
+                    <text>你好，我想购买风度MX5,询问一下最新优惠，谢谢</text>
+                    <text>2018-04-27 08:38</text>
+                </view>
+                <view class='chat_item'>
+                    <text>小火：</text>
+                    <text>我店里没有在这款车，你自己再去其他店里看看</text>
+                    <text>2018-04-27 08:38</text>
+                </view>
+                <view class='chat_item'>
+                    <text>小火：</text>
+                    <text>如果找不到的话，建议你到官网查查这款车有没有下架</text>
+                    <text>2018-04-27 08:38</text>
+                </view>
+            <view class='chat_item'>
+                    <text>我：</text>
+                    <text>你好，我想购买风度MX5,询问一下最新优惠，谢谢</text>
+                    <text>2018-04-27 08:38</text>
+                </view>
+                <view class='chat_item'>
+                    <text>小火：</text>
+                    <text>我店里没有在这款车，你自己再去其他店里看看</text>
+                    <text>2018-04-27 08:38</text>
+                </view>
+                <view class='chat_item'>
+                    <text>小火：</text>
+                    <text>如果找不到的话，建议你到官网查查这款车有没有下架</text>
+                    <text>2018-04-27 08:38</text>
+                </view>
+                <view class='chat_item'>
+                    <text>我：</text>
+                    <text>你好，我想购买风度MX5,询问一下最新优惠，谢谢</text>
+                    <text>2018-04-27 08:38</text>
+                </view>
+                <view class='chat_item'>
+                    <text>小火：</text>
+                    <text>我店里没有在这款车，你自己再去其他店里看看</text>
+                    <text>2018-04-27 08:38</text>
+                </view>
+                <view class='chat_item'>
+                    <text>小火：</text>
+                    <text>如果找不到的话，建议你到官网查查这款车有没有下架</text>
+                    <text>2018-04-27 08:38</text>
+                </view>
+
+            </scroll-view>   
         </view>
     </view>
     <view class='info_box'>

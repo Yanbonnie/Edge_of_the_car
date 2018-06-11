@@ -1,0 +1,5 @@
+@import '../comment_list/comment_list.wxss';
+
+.comment_list .panel{
+    border: 0;
+}
