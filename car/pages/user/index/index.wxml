@@ -1,0 +1,44 @@
+<!--pages/user/index/index.wxml-->
+<view class='userCenter'>
+    <view class='blank'></view>
+    <view class='radiusTop'></view>
+    <view class='list-item big'>
+        <view class='flexL'>
+            <image src="/assets/images/picture.jpg"></image>
+        </view>
+        <view class='flexC'>
+            <view class='title'>小李子</view>
+            <view class='num'>
+                <text>530</text>
+                人找他咨询
+            </view>
+            <view class='starBox'>
+                <view class='star'>
+                    <image src='/assets/images/start_on.png' class='star'></image>
+                </view>
+                <text class='shengl'>4s-广州每期雪佛兰</text>
+            </view>
+        </view>
+         <view class='flexR flexRCenter' bindtap='registerHandle'>
+            <text class='btn'>注册</text>
+        </view> 
+        <!-- <view class='flexR jfBox'>
+            <text class='jf'>积分：5411</text>
+            <text class='btn'>兑换</text>
+        </view> -->
+    </view>
+    <view class='menuBox'>
+        <view class='active'>
+            <image src='/assets/images/menu_1.png'></image>
+        </view>
+        <view>
+            <image src='/assets/images/menu_2.png'></image>
+        </view>
+        <view>
+            <image src='/assets/images/menu_3.png'></image>
+        </view>
+        <view>
+            <image src='/assets/images/menu_4.png'></image>
+        </view>
+    </view>
+</view>

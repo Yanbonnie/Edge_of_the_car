@@ -5,13 +5,46 @@
     <image class="bg" src="/assets/images/card.jpg"></image>
     <view class='logo'><image src='/assets/images/ad.png'></image></view>
     <view class='tabNav'>
-        <view>
+        <view bindtap='goIndex'>
             <image src='/assets/images/home_white.png' style='width:35rpx;height:35rpx;'></image>
             <text>首页</text>
         </view> 
         <view>
             <image src='/assets/images/share.png' style='width:35rpx;height:35rpx;'></image>
             <text>分享</text>
+        </view>
+    </view>
+    <view class='infoBox'>
+        <image class='rz_icon' src='/assets/images/rz_logo.png'></image>
+        <view class='info'>
+            <view class='photo'>
+                <image src="/assets/images/picture.jpg"></image>
+            </view>
+            <view>
+                <view class='title'>
+                    <text>小李子</text>
+                    <image src='/assets/images/rz_icon.png'></image>
+                </view>
+                <text class='txt'>金牌销售顾问</text>
+            </view>
+        </view>
+        <view class='address'>
+            <view class='item'>
+                <image style='width:27rpx;height:27rpx;' src='/assets/images/address.png'></image>
+                腾南信息科技股份有限公司（腾讯大粤网奥迪4S旗舰店）
+            </view>
+            <view class='item'>
+                <image  style='width:22rpx;height:29rpx;'  src='/assets/images/dingwei.png'></image>
+                广州番禺店
+            </view>
+        </view>
+    </view>
+    <view class='btnBox'>
+        <view bindtap='makePhoneHandle' data-phone="18825039689">
+            <image style='width:50rpx;height:60rpx;' src='/assets/images/phone_icon.png'></image>
+        </view>
+        <view bindtap='goChat'>
+            <image style='width:60rpx;height:49rpx;' src='/assets/images/wechat.png'></image>
         </view>
     </view>
 </view>

@@ -1,0 +1,94 @@
+<!--pages/user/register/register.wxml-->
+<view class='register'>
+    <view class='blank'></view>
+    <view class='radiusTop'></view>
+    <view class='info'>
+        <image src='/assets/images/picture.jpg'></image>
+    </view>
+    <view class='form'>
+        <form>
+            <view class='form-item'>
+                <view class='iconBox'>
+                    <image src='/assets/images/form_1.png'></image>
+                </view>
+                <view class='itemBox'>
+                    <input placeholder="姓名"/>
+                </view>
+            </view>
+            <view class='form-item'>
+                <view class='iconBox'>
+                    <image src='/assets/images/form_2.png'></image>
+                </view>
+                <view class='itemBox'>
+                    <input placeholder="手机"/>
+                </view>
+            </view>
+            <view class='form-item'>
+                <view class='iconBox'>
+                    <image src='/assets/images/form_3.png'></image>
+                </view>
+                <view class='itemBox'>
+                    <input placeholder="公司名"/>
+                </view>
+            </view>
+            <view class='form-item'>
+                <view class='iconBox'>
+                    <image src='/assets/images/form_4.png'></image>
+                </view>
+                <view class='itemBox'>
+                    <input placeholder="公司地址"/>
+                </view>
+            </view>
+            <view class='form-item'>
+                <view class='iconBox'>
+                    <image src='/assets/images/form_5.png'></image>
+                </view>
+                <view class='itemBox'>
+                    <input placeholder="职务"/>
+                </view>
+            </view>
+            <view class='form-item'>
+                <view class='iconBox'>
+                    <image src='/assets/images/form_6.png'></image>
+                </view>
+                <view class='itemBox'>
+                    <input placeholder="品牌"/>
+                </view>
+            </view>
+            <view class='form-item'>
+                <view class='iconBox'>
+                    <image src='/assets/images/form_7.png'></image>
+                </view>
+                <!-- <view class='itemBox pictureBox'>
+                    <view>
+                        <text class='placeholder'>上传驾驶证</text>
+                    </view>
+                    <view class='iconR'>
+                        <image src='/assets/images/camer.png' class='camer'></image>
+                    </view>
+                </view> -->
+                <view class='itemBox pictureBox hasPic'>
+                    <view class='picture'>
+                        <image class='image' src='/assets/images/picture.jpg'></image>
+                    </view>
+                    <view class='picture'>
+                        <image class='image' src='/assets/images/add.png'></image>
+                    </view>
+                </view>
+            </view>
+            <view class='form-item'>
+                <view class='iconBox'>
+                    <image src='/assets/images/form_8.png'></image>
+                </view>
+                <view class='itemBox pictureBox'>
+                    <view>
+                        <text class='placeholder'>上传组织机构代码</text>
+                    </view>
+                    <view class='iconR'>
+                        <image src='/assets/images/camer.png' class='camer'></image>
+                    </view>
+                </view>
+            </view>
+        </form>
+    </view>
+</view>

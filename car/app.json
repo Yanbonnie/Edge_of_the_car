@@ -1,11 +1,15 @@
 {
     "pages": [
+        "pages/index2/index2",
+        "pages/bargain/bargain",
+        "pages/user/register/register",
+        "pages/user/index/index",
         "pages/card/card",
         "pages/comment/comment",
         "pages/comment_list/comment_list",
         "pages/chat/chat",
         "pages/chat_list/chat_list",
-        "pages/index2/index2",
+        
         "pages/index/index",
         "pages/logs/logs"
         
@@ -27,10 +31,16 @@
                 "text": "首页"
             },
             {
-                "pagePath": "pages/logs/logs",
+                "pagePath": "pages/bargain/bargain",
                 "iconPath": "/assets/images/bargain.png",
                 "selectedIconPath": "/assets/images/bargain_active.png",
                 "text": "今日特价"
+            },
+            {
+                "pagePath": "pages/user/index/index",
+                "iconPath": "/assets/images/user.png",
+                "selectedIconPath": "/assets/images/user_active.png",
+                "text": "我的"
             }
         ]
     }

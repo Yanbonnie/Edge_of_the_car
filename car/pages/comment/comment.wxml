@@ -4,10 +4,10 @@
     <view class='radiusTop'></view>
     <view class='panel'>
         <view class='list-item'>
-            <view class='flexL'>
+            <view class='flexL' bindtap='goCard'>
                 <image src="/assets/images/picture.jpg"></image>
             </view>
-            <view class='flexC'>
+            <view class='flexC' bindtap='goCard'>
                 <view class='title'>小李子</view>
                 <view class='num'>
                     <text>530</text>
@@ -20,7 +20,7 @@
                     <text class='shengl'>4s-广州每期雪佛兰</text>
                 </view>
             </view>
-            <view class='flexR'>
+            <view class='flexR' bindtap='makePhoneHandle' data-phone="18825039689">
                 <image src='/assets/images/phone.png'></image>
             </view>
         </view>

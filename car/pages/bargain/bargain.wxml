@@ -1,0 +1,5 @@
+<!--pages/bargain/bargain.wxml-->
+<view class='bargain'>
+    <image src='/assets/images/waiting.png'></image>
+    <text>开发中...</text>
+</view>

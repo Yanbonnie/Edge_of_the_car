@@ -1,0 +1,39 @@
+/* pages/user/index/index.wxss */
+.menuBox{
+    display: flex;
+    justify-content: space-around;
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 60rpx;
+}
+.menuBox view{
+    flex-basis: 130rpx;
+    height: 130rpx;
+    border: 1px #c7c7c7 solid;
+    border-radius: 100%;
+}
+.menuBox .active{
+    background: #f5f7ff;
+    border: 1px #f1f1f1 solid;
+}
+.menuBox view image{
+    width: 130rpx;
+    height: 130rpx;
+}
+.list-item .flexR{
+    flex-basis: 180rpx;
+}
+.list-item .flexR .jf{
+    margin-bottom: 10rpx;
+    background: #a5b6f4;
+    padding: 5rpx 10rpx 5rpx 40rpx;
+    color: #fff;
+    border-top-left-radius: 20rpx;
+    border-bottom-left-radius: 20rpx;
+    position: relative;
+    right: -20rpx;
+}
+.list-item .jfBox .btn{
+    margin-top: 20rpx;
+    margin-left: 25rpx;
+}

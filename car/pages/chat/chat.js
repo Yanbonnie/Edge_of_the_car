@@ -1,4 +1,6 @@
 // pages/chat/chat.js
+const app = getApp();
+const { methodsArr } = app.globalData;
 Page({
 
   /**
@@ -62,5 +64,11 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  ...methodsArr,
+  commentHandle(){
+      wx.navigateTo({
+          url: '/pages/comment_list/comment_list',
+      })
   }
 })

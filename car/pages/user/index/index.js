@@ -1,4 +1,4 @@
-// pages/index2/index2.js.js
+// pages/user/index/index.js
 Page({
 
   /**
@@ -63,9 +63,9 @@ Page({
   onShareAppMessage: function () {
   
   },
-  goChat(){
+  registerHandle(){
       wx.navigateTo({
-          url: '/pages/chat/chat',
+          url: '/pages/user/register/register',
       })
   }
 })

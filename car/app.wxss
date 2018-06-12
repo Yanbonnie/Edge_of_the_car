@@ -90,10 +90,13 @@ text,view{
     margin: 0 auto;
     margin-top: 20rpx;
     display: flex;
-    padding: 20rpx;
+    padding: 30rpx;
     align-items: center;
     background: #ebefff;
     border-radius: 15rpx;
+}
+.list-item.big{
+    padding: 40rpx 20rpx;
 }
 .list-item .flexL{
     flex-basis: 120rpx;
@@ -143,4 +146,16 @@ text,view{
 .list-item .flexR .chat{
     width: 32rpx;
     height: 26rpx;
+}
+
+.list-item .flexR .btn{
+    border: 1px #5979e4 solid;
+    display: block;
+    line-height: 50rpx;
+    border-radius: 40rpx;
+    color: #5979e4;
+    width: 130rpx;
+}
+.list-item .flexRCenter{
+    align-self: center;
 }

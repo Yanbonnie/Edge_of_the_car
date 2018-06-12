@@ -1,0 +1,17 @@
+/* pages/bargain/bargain.wxss */
+.bargain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+}
+.bargain image{
+    width: 578rpx;
+    height: 276rpx;
+    position: relative;
+    top: -60rpx;
+}
+.bargain text{
+    font-size: 28rpx;
+}

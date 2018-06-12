@@ -1,4 +1,6 @@
 //app.js
+const { methodsArr } = require('./utils/pageCom');
+console.log(methodsArr)
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -34,7 +36,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    methodsArr,
   }
 })
 

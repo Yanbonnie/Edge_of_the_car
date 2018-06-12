@@ -1,4 +1,6 @@
 // pages/comment_list/comment_list.js
+const app = getApp();
+const { methodsArr } = app.globalData;
 Page({
 
   /**
@@ -62,5 +64,11 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  ...methodsArr,
+  sendComment(){
+      wx.navigateTo({
+          url: '/pages/comment/comment',
+      })
   }
 })

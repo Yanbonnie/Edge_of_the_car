@@ -44,3 +44,6 @@
     bottom: 0;
     right: 0;
 }
+.list-item{
+    width: 85%;
+}

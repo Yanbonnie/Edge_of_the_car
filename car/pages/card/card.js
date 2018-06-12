@@ -1,4 +1,6 @@
 // pages/card/card.js
+const app = getApp();
+const { methodsArr } = app.globalData;
 Page({
 
   /**
@@ -62,5 +64,16 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  ...methodsArr,
+  goIndex(){
+      wx.reLaunch({
+          url: '/pages/index2/index2',
+      })
+  },
+  goChat(){
+      wx.navigateTo({
+          url: '/pages/chat/chat',
+      })
   }
 })

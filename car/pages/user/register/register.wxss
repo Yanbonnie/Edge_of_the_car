@@ -1,0 +1,69 @@
+/* pages/user/register/register.wxss */
+.info image{
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.form-item{
+    display: flex;
+    align-items: center;
+    padding: 10rpx 0 15rpx;
+    flex-direction: row;
+}
+.form-item .iconBox{
+    flex-basis: 100rpx;
+    text-align: right;
+}
+.form-item .iconBox image{
+    width: 46rpx;
+    height: 46rpx;
+    position: relative;
+    top: -5rpx;
+}
+.form-item .itemBox{
+    padding:0rpx 0 18rpx;
+    margin-left: 20rpx;
+    flex-grow: 1;
+    border-bottom: 1rpx #e5e5e5 solid;
+}
+.form-item .itemBox input{
+    padding-left: 10rpx;
+}
+.itemBox{
+    position: relative;
+}
+.itemBox .iconR{
+    background: #9bafef;
+    border-radius: 100%;
+    padding: 10rpx;
+    position: relative;
+    top: -2rpx;
+    margin-right: 10rpx;
+}
+.itemBox .camer{
+    width:32rpx;
+    height: 26rpx; 
+}
+.pictureBox{
+    display: flex;
+    justify-content: space-between;
+}
+.pictureBox .placeholder{
+    position: relative;
+    top: 8rpx;
+    color: #808080;
+}
+.pictureBox .picture{
+    flex-basis: 100rpx;
+    height: 100rpx;
+    margin-right: 10rpx;
+}
+.pictureBox .picture .image{
+    width: 100rpx;
+    height: 100rpx;
+}
+.hasPic{
+    justify-content: flex-start;
+}
