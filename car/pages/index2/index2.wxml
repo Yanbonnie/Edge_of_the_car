@@ -2,21 +2,21 @@
 <view class='blank'></view>
 <view class='containBox'>
     <view class='nav'>
-        <view class='flexL'>广州</view>
+        <view class='flexL' bindtap='showCityHandle'>{{locateCity}}</view>
         <view class='flexR'>品牌</view>
     </view>
     <view class='index'>
         <view class='line'></view>
         <view class='tabNav'>
-            <view class='active'>
+            <view class="{{tabIndex==0?'active':''}}" data-index="0" bindtap='changeTab'>
                 <text>高级技工</text>
                 <text>Mechanic</text>
             </view>
-            <view>
+            <view  class="{{tabIndex==1?'active':''}}" data-index="1" bindtap='changeTab'>
                 <text>原厂配件</text>
                 <text>Fittings</text>
             </view>
-            <view>
+            <view  class="{{tabIndex==2?'active':''}}" data-index="2" bindtap='changeTab'> 
                 <text>新车置换</text>
                 <text>replacement</text>
             </view>
@@ -49,6 +49,8 @@
                 </view>
             </scroll-view>
         </view>
-
+    </view>
+    <view class='cityCover' wx:if="{{cityState}}">
+        <citylist citylist="{{citylist}}" bindcitytap='cityTap' bindcloseCity="closeCityHandle"></citylist>
     </view>
 </view>

@@ -159,3 +159,16 @@ text,view{
 .list-item .flexRCenter{
     align-self: center;
 }
+
+.cityCover{
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    background: #fff;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+}
