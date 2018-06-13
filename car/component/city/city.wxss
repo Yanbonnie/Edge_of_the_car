@@ -77,7 +77,7 @@
     flex: 1;
     display: block;
     font-size: 22rpx;
-    color: #33b9ff;
+    color: #5978e3;
     text-align: center;
 }
 
@@ -95,7 +95,7 @@
     margin-right: 20rpx;
 }
 .new_city {
-    background: #efefef;
+    background: #fff;
     font-size: 28rpx;
 }
 .new_city_title {
@@ -124,8 +124,9 @@
     height: 40rpx;
     padding-left: 25rpx;
     font-size: 28rpx;
-    background: #eee;
-    color: #999;
+    background: #f5f7ff;
+    color: #5978e3;
+    font-weight: bold;
 }
 
 .city_name {
