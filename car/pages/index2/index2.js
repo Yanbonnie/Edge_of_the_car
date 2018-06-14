@@ -12,6 +12,48 @@ let arr2 = [
     { "id": "v8", "cityName": "张家口" }
 ];
 let str = Sort.pySegSort(arr2);
+
+let brands = [
+    {
+        "cityName": "奔驰",
+        "logo":"/assets/images/ad_icon.png",
+        "list": [
+            "A1 Sportback",
+            "A2 Sportback",
+            "s6",
+            "q7"
+        ]
+    },
+    {
+        "cityName": "宾利",
+        "logo": "/assets/images/ad_icon.png",
+        "list": [
+            "s6",
+            "q7"
+        ]
+    },
+    {
+        "cityName":"奥迪",
+        "logo": "/assets/images/ad_icon.png",
+        "list":[
+            "A1 Sportback",
+            "A2 Sportback",
+            "s6",
+            "q7"
+        ]
+    },
+    {
+        "cityName": "宝马",
+        "logo": "/assets/images/ad_icon.png",
+        "list": [
+            "A1 Sportback",
+            "A2 Sportback",
+            "s6",
+            "q7"
+        ]
+    }
+]
+let brandList = Sort.pySegSort(brands); 
 Page({
     /**
      * 页面的初始数据
@@ -20,6 +62,9 @@ Page({
         citylist: str,    //城市列表
         locateCity: '',     //当前城市
         cityState: false,   //是否显示城市弹框
+        brandState:false,
+        brandList:brandList,
+        currentBrand:'',
         tabIndex:0,
     },
 
@@ -90,14 +135,21 @@ Page({
         });
     },
     //显示地址弹框
-    showCityHandle() {
-        this.setData({
-            cityState: true
-        })
+    showCover(e) {
+        const {index} = e.currentTarget.dataset;
+        if(index == 1){
+            this.setData({
+                cityState: true
+            })
+        }else{
+            this.setData({
+                brandState: true
+            })
+        }
+        
     },
     //选择地址
     cityTap(e) {
-        console.log(e);
         const cityName = e.detail.cityname;
         this.setData({
             locateCity: cityName,
@@ -105,10 +157,25 @@ Page({
         })
         wx.setStorageSync('locatecity', { city: cityName, time: new Date().getTime() });
     },
+    //选择品牌
+    brandTap(e){
+        console.log(e)
+        const name = e.detail.name;
+        this.setData({
+            currentBrand: name,
+            brandState:false
+        })
+    },
     //关闭地址选择
     closeCityHandle() {
         this.setData({
             cityState: false
         })
     },
+    //关闭品牌框
+    closeBrandHandle(){
+        this.setData({
+            brandState: false
+        })
+    }
 })

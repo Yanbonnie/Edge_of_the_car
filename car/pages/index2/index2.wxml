@@ -2,8 +2,8 @@
 <view class='blank'></view>
 <view class='containBox'>
     <view class='nav'>
-        <view class='flexL' bindtap='showCityHandle'>{{locateCity}}</view>
-        <view class='flexR'>品牌</view>
+        <view class='flexL' bindtap='showCover' data-index="1">{{locateCity}}</view>
+        <view class='flexR' bindtap='showCover' data-index="2">{{currentBrand?currentBrand:'品牌'}}</view>
     </view>
     <view class='index'>
         <view class='line'></view>
@@ -52,5 +52,8 @@
     </view>
     <view class='cityCover' wx:if="{{cityState}}">
         <citylist citylist="{{citylist}}" bindcitytap='cityTap' bindcloseCity="closeCityHandle"></citylist>
+    </view>
+    <view class='cityCover' wx:if="{{brandState}}">
+        <brandlist citylist="{{brandList}}" bindbrandtap='brandTap' bindcloseBrand="closeBrandHandle"></brandlist>
     </view>
 </view>

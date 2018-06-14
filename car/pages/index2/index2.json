@@ -1,5 +1,6 @@
 {
     "usingComponents": {
-        "citylist": "../../component/city/city"
+        "citylist": "../../component/city/city",
+        "brandlist": "../../component/brand/brand"
     }
 }
