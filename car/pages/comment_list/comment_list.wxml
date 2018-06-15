@@ -4,20 +4,20 @@
     <view class='radiusTop'></view>
     <view class='panel'>
         <view class='list-item'>
-            <view class='flexL' bindtap='goCard'>
-                <image src="/assets/images/picture.jpg"></image>
+            <view class='flexL'  bindtap='goCard'>
+                <image style='width:100rpx;height:100rpx;' mode="aspectFill" src="{{info.picture}}"></image>
             </view>
-            <view class='flexC' bindtap='goCard'>
-                <view class='title'>小李子</view>
+            <view class='flexC'  bindtap='goCard'>
+                <view class='title'>{{info.name}}</view>
                 <view class='num'>
-                    <text>530</text>
+                    <text>{{info.like}}</text>
                     人找他咨询
                 </view>
                 <view class='starBox'>
                     <view class='star'>
-                        <image src='/assets/images/start_on.png' class='star'></image>
+                        <image src='{{info.logo}}' style='width:50rpx;height:30rpx;' mode="aspectFit" class='star'></image>
                     </view>
-                    <text class='shengl'>4s-广州每期雪佛兰</text>
+                    <text class='shengl'>{{info.address}}</text>
                 </view>
             </view>
             <view class='flexR' bindtap='makePhoneHandle' data-phone="18825039689">
@@ -52,20 +52,16 @@
                     <view><text>有亲和力142</text></view>
                 </view>
                 <view class='comment_list'>
-                    <view class='comment-item' wx:for="[1,1,1,11,1,11,1,11,1,1,11,1,1,11,]" wx:key="index">
+                    <view class='comment-item' wx:for="{{commentList}}" wx:key="index" wx:for-item="commentItem">
                         <view class='flexL'>
-                            <text>小小</text>
+                            <text>{{commentItem.userName}}</text>
                             <view>
-                                <image src="/assets/images/start_on.png"></image>
-                                <image src="/assets/images/start_on.png"></image>
-                                <image src="/assets/images/start_on.png"></image>
-                                <image src="/assets/images/start_on.png"></image>
-                                <image src="/assets/images/start_on.png"></image>
-                                <image src="/assets/images/start_on.png"></image>
+                                <view><image wx:for="{{commentItem.start}}" wx:key="{{index}}" src="/assets/images/start_on.png"></image></view>
+                                <view style="padding-left:10rpx;">{{commentItem.comment}}</view>
                             </view>
                         </view>
                         <view class='flexR'>
-                            2018-06-11
+                            {{commentItem.time}}
                         </view>
                     </view>
                 </view>

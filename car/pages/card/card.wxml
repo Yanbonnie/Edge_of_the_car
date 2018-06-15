@@ -3,7 +3,7 @@
     <view class='blank'></view>
     <view class='radiusTop'></view>
     <image class="bg" src="/assets/images/card.jpg"></image>
-    <view class='logo'><image src='/assets/images/ad.png'></image></view>
+    <view class='logo'><image style='width:100rpx;height:100rpx;' mode='acceptFill' src='{{info.logo}}'></image></view>
     <view class='tabNav'>
         <view bindtap='goIndex'>
             <image src='/assets/images/home_white.png' style='width:35rpx;height:35rpx;'></image>
@@ -18,11 +18,11 @@
         <image class='rz_icon' src='/assets/images/rz_logo.png'></image>
         <view class='info'>
             <view class='photo'>
-                <image src="/assets/images/picture.jpg"></image>
+                <image style='width:100rpx;height:100rpx;' mode="acceptFill"  src="{{info.picture}}"></image>
             </view>
             <view>
                 <view class='title'>
-                    <text>小李子</text>
+                    <text>{{info.name}}</text>
                     <image src='/assets/images/rz_icon.png'></image>
                 </view>
                 <text class='txt'>金牌销售顾问</text>
@@ -31,11 +31,11 @@
         <view class='address'>
             <view class='item'>
                 <image style='width:27rpx;height:27rpx;' src='/assets/images/address.png'></image>
-                腾南信息科技股份有限公司（腾讯大粤网奥迪4S旗舰店）
+                {{info.detailAddress}}
             </view>
             <view class='item'>
                 <image  style='width:22rpx;height:29rpx;'  src='/assets/images/dingwei.png'></image>
-                广州番禺店
+                {{info.address}}
             </view>
         </view>
     </view>

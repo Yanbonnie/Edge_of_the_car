@@ -9,7 +9,6 @@
         "pages/comment_list/comment_list",
         "pages/chat/chat",
         "pages/chat_list/chat_list",
-        
         "pages/index/index",
         "pages/logs/logs"
         

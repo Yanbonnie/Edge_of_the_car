@@ -5,19 +5,19 @@
     <view class='panel'>
         <view class='list-item' bindtap='goCard'>
             <view class='flexL'>
-                <image src="/assets/images/picture.jpg"></image>
+                <image style='width:100rpx;height:100rpx;' mode="aspectFill" src="{{info.picture}}"></image>
             </view>
             <view class='flexC'>
-                <view class='title'>小李子</view>
+                <view class='title'>{{info.name}}</view>
                 <view class='num'>
-                    <text>530</text>
+                    <text>{{info.like}}</text>
                     人找他咨询
                 </view>
                 <view class='starBox'>
                     <view class='star'>
-                        <image src='/assets/images/start_on.png' class='star'></image>
+                        <image src='{{info.logo}}' style='width:50rpx;height:30rpx;' mode="aspectFit" class='star'></image>
                     </view>
-                    <text class='shengl'>4s-广州每期雪佛兰</text>
+                    <text class='shengl'>{{info.address}}</text>
                 </view>
             </view>
             <view class='flexR'>
@@ -46,7 +46,7 @@
     <view class='chat_view'>
         <view class='chitchat'>
             <scroll-view class='chatList' scroll-y="true" style='height:100%;'>
-                <view class='chat_item'>
+                <!-- <view class='chat_item'>
                     <text>我：</text>
                     <text>你好，我想购买风度MX5,询问一下最新优惠，谢谢</text>
                     <text>2018-04-27 08:38</text>
@@ -90,7 +90,7 @@
                     <text>小火：</text>
                     <text>如果找不到的话，建议你到官网查查这款车有没有下架</text>
                     <text>2018-04-27 08:38</text>
-                </view>
+                </view> -->
 
             </scroll-view>   
         </view>

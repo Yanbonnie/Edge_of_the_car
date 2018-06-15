@@ -1,6 +1,7 @@
 // pages/index2/index2.js.js
 import qqmap from '../../utils/map.js';
 import Sort from '../../utils/city_sort';   //城市排序
+import { indexData, brands } from '../../utils/data.js';
 let arr2 = [
     { "id": "v1", "cityName": "北京" },
     { "id": "v2", "cityName": "上海" },
@@ -13,46 +14,6 @@ let arr2 = [
 ];
 let str = Sort.pySegSort(arr2);
 
-let brands = [
-    {
-        "cityName": "奔驰",
-        "logo":"/assets/images/ad_icon.png",
-        "list": [
-            "A1 Sportback",
-            "A2 Sportback",
-            "s6",
-            "q7"
-        ]
-    },
-    {
-        "cityName": "宾利",
-        "logo": "/assets/images/ad_icon.png",
-        "list": [
-            "s6",
-            "q7"
-        ]
-    },
-    {
-        "cityName":"奥迪",
-        "logo": "/assets/images/ad_icon.png",
-        "list":[
-            "A1 Sportback",
-            "A2 Sportback",
-            "s6",
-            "q7"
-        ]
-    },
-    {
-        "cityName": "宝马",
-        "logo": "/assets/images/ad_icon.png",
-        "list": [
-            "A1 Sportback",
-            "A2 Sportback",
-            "s6",
-            "q7"
-        ]
-    }
-]
 let brandList = Sort.pySegSort(brands); 
 Page({
     /**
@@ -66,6 +27,7 @@ Page({
         brandList:brandList,
         currentBrand:'',
         tabIndex:0,
+        list: [],
     },
 
     /**
@@ -73,6 +35,11 @@ Page({
      */
     onLoad: function (options) {
         this.getAddress();
+        
+        let list = indexData.filter(item=>{
+            return item.type == 'jg'
+        });
+        this.setData({list})
     },
     /**
      * 页面相关事件处理函数--监听用户下拉动作
@@ -95,15 +62,32 @@ Page({
 
     },
     //到达聊天页面
-    goChat() {
+    goChat(e) {
+        const { index }  = e.currentTarget.dataset;
+        wx.setStorageSync('info', this.data.list[index]);  //设置缓存
         wx.navigateTo({
             url: '/pages/chat/chat',
         })
     },
     changeTab(e){
         const { index } = e.currentTarget.dataset;
+        let list = [];
+        if(index == 0){
+            list = indexData.filter(item => {
+                return item.type == 'jg'
+            });
+        } else if (index == 1) {
+            list = indexData.filter(item => {
+                return item.type == 'pj'
+            });
+        }else{
+            list = indexData.filter(item => {
+                return item.type == 'zh'
+            });
+        }
         this.setData({
-            tabIndex:index
+            tabIndex:index,
+            list
         })
     },
     //初始化定位

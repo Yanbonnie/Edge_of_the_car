@@ -2,7 +2,7 @@
 <view class='blank'></view>
 <view class='containBox'>
     <view class='nav'>
-        <view class='flexL' bindtap='showCover' data-index="1">{{locateCity}}</view>
+        <view class='flexL' bindtap='showCover' data-index="1">{{locateCity ? locateCity : '定位中'}}</view>
         <view class='flexR' bindtap='showCover' data-index="2">{{currentBrand?currentBrand:'品牌'}}</view>
     </view>
     <view class='index'>
@@ -25,21 +25,21 @@
         <view class='listBox'>
             <scroll-view style="width:100%;height:100%;display:block;" class='scrollView' scroll-y="true">
                 <view class='list'>
-                    <view bindtap='goChat' class='list-item' wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:key="{{index}}">
+                    <view bindtap='goChat' data-index="{{index}}" class='list-item' wx:for="{{list}}" wx:key="{{index}}">
                         <view class='flexL'>
-                            <image src="/assets/images/picture.jpg"></image>
+                            <image src="{{item.picture}}" style="width:100rpx;height:100rpx;" mode="aspectFill"></image>
                         </view>
                         <view class='flexC'>
-                            <view class='title'>小李子</view>
+                            <view class='title'>{{item.name}}</view>
                             <view class='num'>
-                                <text>530</text>
+                                <text>{{item.like}}</text>
                                 人找他咨询
                             </view>
                             <view class='starBox'>
                                 <view class='star'>
-                                    <image src='/assets/images/start_on.png' class='star'></image>
+                                    <image style="width:50rpx;height:30rpx;" mode="aspectFit" src='{{item.logo}}' class='star'></image>
                                 </view>
-                                <text class='shengl'>4s-广州每期雪佛兰</text>
+                                <text class='shengl'>{{item.address}}</text>
                             </view>
                         </view>
                         <view class='flexR'>

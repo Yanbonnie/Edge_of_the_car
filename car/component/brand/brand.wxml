@@ -10,7 +10,7 @@
                     <view class='city_name' wx:for='{{letterItem.data}}' wx:key='this' data-types='list'  data-index='{{index}}' data-val='{{item}}'>
                     
                         <view class='cityname_item'>
-                            <view class='logo'><image src="{{item.logo}}"></image></view>
+                            <view class='logo'><image style="width:50rpx;height:30rpx;" mode="aspectFit" src="{{item.logo}}"></image></view>
                             <text>{{item.cityName}}</text>
                         </view>
                         <view class='brandStyle'>
