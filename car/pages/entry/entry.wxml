@@ -1,0 +1,3 @@
+<!--pages/entry/entry.wxml-->
+<text>pages/entry/entry.wxml</text>
+<button wx:if="{{!hasUserInfo}}" open-type='getUserInfo' bindgetuserinfo="bindGetuserinfo">进入首页</button>

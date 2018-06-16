@@ -18,14 +18,14 @@
         <image class='rz_icon' src='/assets/images/rz_logo.png'></image>
         <view class='info'>
             <view class='photo'>
-                <image style='width:100rpx;height:100rpx;' mode="acceptFill"  src="{{info.picture}}"></image>
+                <image style='width:100rpx;height:100rpx;' mode="acceptFill"  src="{{info.headpic}}"></image>
             </view>
             <view>
                 <view class='title'>
                     <text>{{info.name}}</text>
-                    <image src='/assets/images/rz_icon.png'></image>
+                    <image wx:if="{{info.is_auth == 1}}" src='/assets/images/rz_icon.png'></image>
                 </view>
-                <text class='txt'>金牌销售顾问</text>
+                <text class='txt'>{{info.duties}}</text>
             </view>
         </view>
         <view class='address'>
@@ -40,7 +40,7 @@
         </view>
     </view>
     <view class='btnBox'>
-        <view bindtap='makePhoneHandle' data-phone="18825039689">
+        <view bindtap='makePhoneHandle' data-phone="{{info.mobile}}">
             <image style='width:50rpx;height:60rpx;' src='/assets/images/phone_icon.png'></image>
         </view>
         <view bindtap='goChat'>

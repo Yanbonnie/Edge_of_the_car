@@ -5,19 +5,19 @@
     <view class='panel'>
         <view class='list-item' bindtap='goCard'>
             <view class='flexL'>
-                <image style='width:100rpx;height:100rpx;' mode="aspectFill" src="{{info.picture}}"></image>
+                <image style='width:100rpx;height:100rpx;' mode="aspectFill" src="{{info.headpic}}"></image>
             </view>
             <view class='flexC'>
                 <view class='title'>{{info.name}}</view>
                 <view class='num'>
-                    <text>{{info.like}}</text>
+                    <text>{{info.popularity}}</text>
                     人找他咨询
                 </view>
                 <view class='starBox'>
                     <view class='star'>
                         <image src='{{info.logo}}' style='width:50rpx;height:30rpx;' mode="aspectFit" class='star'></image>
                     </view>
-                    <text class='shengl'>{{info.address}}</text>
+                    <text class='shengl'>{{info.company}}</text>
                 </view>
             </view>
             <view class='flexR'>
@@ -25,8 +25,8 @@
             </view>
         </view>
         <view class='flexBox'>
-            <view class='flexWrap' bindtap='makePhoneHandle' data-phone="18825039689">
-                <view class='flexL' >电话：18825039689</view>
+            <view class='flexWrap' bindtap='makePhoneHandle' data-phone="{{mobile}}">
+                <view class='flexL' >电话：{{info.mobile}}</view>
                 <view class='flexR'><image src="/assets/images/phone.png"></image></view>
             </view>
             <view class='flexWrap comment' bindtap='commentHandle'>
@@ -37,7 +37,7 @@
                     <image src='/assets/images/start_on.png'></image>
                     <image src='/assets/images/start_on.png'></image>
                     <image src='/assets/images/start_on.png'></image>
-                    <text class='fontRed margin-left10'>4.8</text>
+                    <text class='fontRed margin-left10'>{{item.evaluate}}</text>
                 </view>
                 <view class='flexR'><image style='width:17rpx;' src="/assets/images/right_icon.png"></image></view>
             </view>

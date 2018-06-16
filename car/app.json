@@ -1,6 +1,8 @@
 {
     "pages": [
         "pages/index2/index2",
+        "pages/entry/entry",
+        
         "pages/bargain/bargain",
         "pages/user/register/register",
         "pages/user/index/index",
@@ -9,8 +11,7 @@
         "pages/comment_list/comment_list",
         "pages/chat/chat",
         "pages/chat_list/chat_list",
-        "pages/index/index",
-        "pages/logs/logs"
+        "pages/index/index"
         
     ],
     "window": {

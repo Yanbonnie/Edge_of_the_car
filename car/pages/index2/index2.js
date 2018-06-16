@@ -1,4 +1,6 @@
 // pages/index2/index2.js.js
+const app = getApp();
+const { globalData: { REQUEST, openid } } = app;
 import qqmap from '../../utils/map.js';
 import Sort from '../../utils/city_sort';   //城市排序
 import { indexData, brands } from '../../utils/data.js';
@@ -26,8 +28,11 @@ Page({
         brandState:false,
         brandList:brandList,
         currentBrand:'',
-        tabIndex:0,
-        list: [],
+        tabIndex:1,
+        staffinfo: [],  //员工列表
+        page1:1,         //员工列表翻页
+        page2:1,
+        page3:1
     },
 
     /**
@@ -36,11 +41,67 @@ Page({
     onLoad: function (options) {
         this.getAddress();
         
-        let list = indexData.filter(item=>{
+        /*let staffinfo = indexData.filter(item=>{
             return item.type == 'jg'
         });
-        this.setData({list})
+        this.setData({ staffinfo})*/
+        this.getStaff(1)
     },
+    //获取员工列表
+    getStaff(e){
+        const { index } = e.currentTarget ? e.currentTarget.dataset : { index : 1 };
+        const { page } = e.currentTarget ? e.currentTarget.dataset : { page : 1 } ;
+        this.setData({
+            tabIndex: index
+        })
+        wx.showLoading({
+            title: '加载中...',
+        })
+        REQUEST('GET','getStaff',{
+            openid,
+            type: index,
+            page
+        }).then(res=>{
+            wx.hideLoading();
+            const { staffinfo } = res;
+            this.setData({
+                staffinfo
+            })
+        })
+    },
+    bindscrolltolower(){
+        
+    },
+    //到达聊天页面
+    goChat(e) {
+        const { openid } = e.currentTarget.dataset;
+        // wx.setStorageSync('info', this.data.list[index]);  //设置缓存
+        wx.navigateTo({
+            url: `/pages/chat/chat/staff_openid=${openid}`,
+        })
+    },
+    //tab切换
+    /*changeTab(e) {
+        const { index } = e.currentTarget.dataset;
+        let list = [];
+        if (index == 0) {
+            list = indexData.filter(item => {
+                return item.type == 'jg'
+            });
+        } else if (index == 1) {
+            list = indexData.filter(item => {
+                return item.type == 'pj'
+            });
+        } else {
+            list = indexData.filter(item => {
+                return item.type == 'zh'
+            });
+        }
+        this.setData({
+            tabIndex: index,
+            list
+        })
+    },*/
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
@@ -61,48 +122,17 @@ Page({
     onShareAppMessage: function () {
 
     },
-    //到达聊天页面
-    goChat(e) {
-        const { index }  = e.currentTarget.dataset;
-        wx.setStorageSync('info', this.data.list[index]);  //设置缓存
-        wx.navigateTo({
-            url: '/pages/chat/chat',
-        })
-    },
-    changeTab(e){
-        const { index } = e.currentTarget.dataset;
-        let list = [];
-        if(index == 0){
-            list = indexData.filter(item => {
-                return item.type == 'jg'
-            });
-        } else if (index == 1) {
-            list = indexData.filter(item => {
-                return item.type == 'pj'
-            });
-        }else{
-            list = indexData.filter(item => {
-                return item.type == 'zh'
-            });
-        }
-        this.setData({
-            tabIndex:index,
-            list
-        })
-    },
     //初始化定位
     getAddress() {
         let cityOrTime = wx.getStorageSync('locatecity') || {},
             time = new Date().getTime(),
             city = '';
-        console.log(cityOrTime)
         if (!cityOrTime.time || (time - cityOrTime.time > 1800000)) {//每隔30分钟请求一次定位
             this.getLocate();
         } else {//如果未满30分钟，那么直接从本地缓存里取值
             this.setData({
                 locateCity: cityOrTime.city
             })
-            console.log(this.data.locateCity)
         }
     },
     //调用定位
