@@ -5,22 +5,22 @@
     <view class='panel'>
         <view class='list-item'>
             <view class='flexL'  bindtap='goCard'>
-                <image style='width:100rpx;height:100rpx;' mode="aspectFill" src="{{info.picture}}"></image>
+                <image style='width:100rpx;height:100rpx;' mode="aspectFill" src="{{info.headpic}}"></image>
             </view>
             <view class='flexC'  bindtap='goCard'>
                 <view class='title'>{{info.name}}</view>
                 <view class='num'>
-                    <text>{{info.like}}</text>
+                    <text>{{info.popularity}}</text>
                     人找他咨询
                 </view>
                 <view class='starBox'>
                     <view class='star'>
                         <image src='{{info.logo}}' style='width:50rpx;height:30rpx;' mode="aspectFit" class='star'></image>
                     </view>
-                    <text class='shengl'>{{info.address}}</text>
+                    <text class='shengl'>{{info.company}}</text>
                 </view>
             </view>
-            <view class='flexR' bindtap='makePhoneHandle' data-phone="18825039689">
+            <view class='flexR' bindtap='makePhoneHandle' data-phone="{{info.mobile}}">
                 <image src='/assets/images/phone.png'></image>
             </view>
         </view>
@@ -33,7 +33,7 @@
                     <image src='/assets/images/start_on.png'></image>
                     <image src='/assets/images/start_on.png'></image>
                     <image src='/assets/images/start_on.png'></image>
-                    <text class='fontRed margin-left10'>4.8</text>
+                    <text class='fontRed margin-left10'>{{info.evaluate}}</text>
                 </view>
             </view>
         </view>
@@ -42,22 +42,22 @@
         <view class='chitchat'>
             <scroll-view class='chatList' scroll-y="true" style='height:100%;'>
                 <view class='labelBox'>
-                    <view><text>服务热情176</text></view>
-                    <view><text>有责任心142</text></view>
-                    <view><text>非常专业185</text></view>
+                    <view wx:for="{{keyword}}"><text>{{item.text+''+item.count}}</text></view>
+                    <!-- <view><text>有责任心142</text></view>
+                    <view><text>非常专业185</text></view> -->
                 </view>
-                <view class='labelBox'>
+                <!-- <view class='labelBox'>
                     <view><text>回复及时452</text></view>
                     <view><text>态度诚恳988</text></view>
                     <view><text>有亲和力142</text></view>
-                </view>
+                </view> -->
                 <view class='comment_list'>
-                    <view class='comment-item' wx:for="{{commentList}}" wx:key="index" wx:for-item="commentItem">
+                    <view class='comment-item' wx:for="{{estimate}}" wx:key="index" wx:for-item="commentItem">
                         <view class='flexL'>
-                            <text>{{commentItem.userName}}</text>
+                            <text>{{wxname.userName}}</text>
                             <view>
                                 <view><image wx:for="{{commentItem.start}}" wx:key="{{index}}" src="/assets/images/start_on.png"></image></view>
-                                <view style="padding-left:10rpx;">{{commentItem.comment}}</view>
+                                <view style="padding-left:10rpx;">{{wxname.score}}</view>
                             </view>
                         </view>
                         <view class='flexR'>
@@ -69,7 +69,7 @@
         </view>
     </view>
     <view class='info_box'>
-        <view class='send_comment' bindtap='sendComment'>
+        <view class='send_comment' bindtap='sendComment' >
             <view>发表评价</view>
         </view>
     </view>

@@ -29,6 +29,11 @@ const URL = {
     "getStaffDetails": "getStaffDetails",                    //获取员工详情信息
     "getStaffVisitingCard":"getStaffVisitingCard",           //获取员工名片信息接口   
     "getStaffEstimate": "getStaffEstimate",                  //获取员⼯工评价接⼝口
+    "postEstimate":"postEstimate",                           //用户进行评价接口
+    "getMyInfo": "getMyInfo",                                //获取我的个⼈人⽤用户接⼝口
+    "getAdvisor": "getAdvisor",                              //获取专属顾问接口
+    "readMsg": "readMsg",                                    //用户阅读信息
+
           
 }
 //请求接口封装

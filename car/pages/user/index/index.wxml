@@ -4,31 +4,32 @@
     <view class='radiusTop'></view>
     <view class='list-item big'>
         <view class='flexL'>
-            <image src="/assets/images/picture.jpg"></image>
+            <image src="{{headpic}}"></image>
         </view>
         <view class='flexC'>
-            <view class='title'>小李子</view>
+            <view class='title'>{{name}}</view>
             <view class='num'>
-                <text>530</text>
+                <text>{{popularity}}</text>
                 人找他咨询
             </view>
             <view class='starBox'>
-                <view class='star'>
+                <!-- <view class='star'>
                     <image src='/assets/images/start_on.png' class='star'></image>
-                </view>
-                <text class='shengl'>4s-广州每期雪佛兰</text>
+                </view> -->
+                <text class='shengl'>{{company}}</text>
             </view>
         </view>
-         <view class='flexR flexRCenter' bindtap='registerHandle'>
+        
+        <view  wx:if="{{is_sign}}" class='flexR jfBox'>
+            <text class='jf'>积分：{{integral}}</text>
+            <text class='btn'>兑换</text>
+        </view> 
+        <view wx:else class='flexR flexRCenter' bindtap='registerHandle'>
             <text class='btn'>注册</text>
         </view> 
-        <!-- <view class='flexR jfBox'>
-            <text class='jf'>积分：5411</text>
-            <text class='btn'>兑换</text>
-        </view> -->
     </view>
     <view class='menuBox'>
-        <view class='active'>
+        <view class='active' bindtap='goAdviser'>
             <image src='/assets/images/menu_1.png'></image>
         </view>
         <view>

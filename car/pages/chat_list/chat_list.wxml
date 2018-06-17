@@ -3,21 +3,22 @@
     <view class='blank'></view>
     <scroll-view style="width:100%;height:100%;display:block;" class='scrollView radiusTop' scroll-y="true">
         <view class='list'>
-            <view class='list-item' wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:key="{{index}}">
+            <view class='list-item' wx:for="{{list}}" wx:key="{{index}}" data-staff_openid="{{item.staff_openid}}" bindtap='goChat'>
                 <view class='flexL'>
-                    <image src="/assets/images/picture.jpg"></image>
+                    <image src="{{item.staff_wxheadpic}}"></image>
+                    <view class='redRadius' wx:if="{{!item.is_read}}"></view>
                 </view>
                 <view class='flexC'>
-                    <view class='title'>小李子</view>
+                    <view class='title'>{{item.staff_name}}</view>
                     <view class='num'>
-                        中国好同事买了辆奥斯顿马丁
+                        {{item.company}}
                     </view>
                     <view class='starBox'>
-                        <text>建议您咨询一下其他店铺</text>
+                        <text>{{item.content}}</text>
                     </view>
                 </view>
                 <view class='flexR'>
-                    <text>2018-04-08</text>
+                    <text>{{item.time}}</text>
                 </view>
             </view>
         </view>

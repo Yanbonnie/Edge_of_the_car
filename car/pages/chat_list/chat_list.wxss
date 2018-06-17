@@ -5,3 +5,15 @@
 .list-item .flexR text{
     color: #b8b8b8;
 }
+.list-item .flexL{
+    position: relative;
+}
+.redRadius{
+    width: 20rpx;
+    height: 20rpx;
+    background: #ff503f;
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}

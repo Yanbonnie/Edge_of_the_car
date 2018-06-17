@@ -1,6 +1,6 @@
 // pages/comment_list/comment_list.js
 const app = getApp();
-const { methodsArr } = app.globalData;
+const { globalData:{methodsArr,REQUEST,openid} } = app;
 import { commentList } from '../../utils/data.js';
 Page({
 
@@ -8,52 +8,48 @@ Page({
      * 页面的初始数据
      */
     data: {
-        info: '',
-        commentList: []
+        info: '',           //员工信息
+        keyword:[],         //评价关键字数组
+        estimate:[],        //评价分数详情数据
+        commentList: [],
+        staff_openid:''
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        const { staff_openid } = options;
         this.setData({
-            info: wx.getStorageSync('info')
+            // info: wx.getStorageSync('info')
+            staff_openid
         })
-        let list = commentList.sort((a,b)=>{
+        /*let list = commentList.sort((a,b)=>{
             return Math.random() * a.start > Math.random()*b.start
         })
         this.setData({
             commentList:list
-        });
+        });*/
     },
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
+    ...methodsArr,
+    getStaffEstimate(){
+        const { staff_openid } = this.data;
+        REQUEST('GET','getStaffEstimate',{
+            staff_openid,
+            openid
+        }).then(res=>{
+            this.setData({
+                info: res.staffinfo
+            })
+        })
     },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
+    sendComment() {
+        const { info } = this.data;
+        wx.setStorageSync('staffinfo', info)
+        wx.navigateTo({
+            url: '/pages/comment/comment',
+        })
     },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
@@ -73,11 +69,5 @@ Page({
      */
     onShareAppMessage: function () {
 
-    },
-    ...methodsArr,
-    sendComment() {
-        wx.navigateTo({
-            url: '/pages/comment/comment',
-        })
     }
 })
