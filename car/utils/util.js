@@ -32,9 +32,7 @@ const URL = {
     "postEstimate":"postEstimate",                           //用户进行评价接口
     "getMyInfo": "getMyInfo",                                //获取我的个⼈人⽤用户接⼝口
     "getAdvisor": "getAdvisor",                              //获取专属顾问接口
-    "readMsg": "readMsg",                                    //用户阅读信息
-
-          
+    "readMsg": "readMsg",                                    //用户阅读信息   
 }
 //请求接口封装
 const REQUEST = (method, url, data, err = false) => {   //err->true  需要对失败进行特殊处理

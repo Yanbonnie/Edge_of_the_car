@@ -130,3 +130,22 @@ page{
 .btnBox view image{
     height: 60rpx;
 }
+
+.btnBox2 {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 800rpx;
+    width: 80%;
+    left: 10%;
+}
+
+.btnBox2 view {
+    flex-basis: 200rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    background: rgba(94,132,242,0.6);
+    border-radius: 10rpx;
+    color: #fff;
+}

@@ -41,10 +41,11 @@
                 <view class='list'>
                     <view bindtap='goChat' data-openid="{{item.openid}}" class='list-item' wx:for="{{staffinfo}}" wx:key="{{index}}">
                         <view class='flexL'>
-                            <image src="{{item.headpic}}" style="width:100rpx;height:100rpx;" mode="aspectFill"></image>
+                            <image src="{{item.headpic}}" style="width:120rpx;height:120rpx;" mode="aspectFill"></image>
                         </view>
                         <view class='flexC'>
                             <view class='title'>{{item.name}}</view>
+                            <view class='num'>{{item.duties}}</view>
                             <view class='num'>
                                 <text>{{item.popularity}}</text>
                                 人找他咨询

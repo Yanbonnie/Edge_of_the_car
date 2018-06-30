@@ -14,7 +14,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        /*this.getUserInfo().then(res=>{   //判断授权按钮是否显示
+        this.getUserInfo().then(res=>{   //判断授权按钮是否显示
             if(!res.success){
                 this.setData({
                     hasUserInfo:false
@@ -32,12 +32,13 @@ Page({
                     this.loginHandle(res)
                 }
             }
-        }*/
+        }
 
     },
     bindGetuserinfo: function (e) {  //没有授权的时候进入页面
-        const { iv,encryptedData }  = e.detail.userInfo;
+        
         if (e.detail.userInfo) {
+            // const { iv, encryptedData } = e.detail.userInfo;
             console.log("点击了允许授权按钮");
             this.loginHandle(e.detail.userInfo)
             //用户按了允许授权按钮

@@ -172,3 +172,13 @@ text,view{
     border-top-left-radius: 20rpx;
     border-top-right-radius: 20rpx;
 }
+
+
+.loading {
+    text-align: center;
+}
+
+.loadingImg {
+    height: 80rpx;
+    margin-top: 20%;
+} 

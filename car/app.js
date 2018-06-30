@@ -26,6 +26,7 @@ App({
       }
     })
   },
+  userInfoReadyCallback(){},
   globalData: {
     userInfo: null,
     methodsArr,

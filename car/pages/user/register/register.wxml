@@ -57,6 +57,35 @@
             </view>
             <view class='form-item'>
                 <view class='iconBox'>
+                    <image src='/assets/images/form_9.png'></image>
+                </view>
+                <view class='itemBox pictureBox' bindtap='selectStyle'>
+                    <view class='placeholder text'>{{selectIndex ? itemList[selectIndex] : '归属'}}</view>
+                </view>
+            </view>
+            <view class='form-item'>
+                <view class='iconBox'>
+                    <image src='/assets/images/form_10.png'></image>
+                </view>
+                 <view class='itemBox pictureBox'>
+                    <view>
+                        <text class='placeholder'>上传生活照</text>
+                    </view>
+                    <view class='iconR'>
+                        <image src='/assets/images/camer.png' class='camer'></image>
+                    </view>
+                </view> 
+                <!-- <view class='itemBox pictureBox hasPic'>
+                    <view class='picture'>
+                        <image class='image' src='/assets/images/picture.jpg'></image>
+                    </view>
+                    <view class='picture'>
+                        <image class='image' src='/assets/images/add.png'></image>
+                    </view>
+                </view> -->
+            </view>
+            <view class='form-item'>
+                <view class='iconBox'>
                     <image src='/assets/images/form_7.png'></image>
                 </view>
                 <!-- <view class='itemBox pictureBox'>

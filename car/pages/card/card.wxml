@@ -18,7 +18,7 @@
         <image class='rz_icon' src='/assets/images/rz_logo.png'></image>
         <view class='info'>
             <view class='photo'>
-                <image style='width:100rpx;height:100rpx;' mode="acceptFill"  src="{{info.headpic}}"></image>
+                <image style='width:120rpx;height:120rpx;' mode="acceptFill"  src="{{info.headpic}}"></image>
             </view>
             <view>
                 <view class='title'>
@@ -38,6 +38,10 @@
                 {{info.address}}
             </view>
         </view>
+    </view>
+    <view class='btnBox2'>
+        <view>我的公司</view>
+        <view>我的商店</view>
     </view>
     <view class='btnBox'>
         <view bindtap='makePhoneHandle' data-phone="{{info.mobile}}">
