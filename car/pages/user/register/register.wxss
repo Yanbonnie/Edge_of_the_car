@@ -1,4 +1,7 @@
 /* pages/user/register/register.wxss */
+.register{
+    padding-bottom: 40rpx;
+}
 .info image{
     width: 150rpx;
     height: 150rpx;
@@ -74,4 +77,14 @@
 }
 .hasPic{
     justify-content: flex-start;
+}
+
+.btnBox button{
+    width: 80%;
+    height: 80rpx;
+    line-height: 80rpx;
+    background: #6884ec;
+    color: #fff;
+    text-align: center;
+    margin-top: 20rpx;
 }

@@ -1,1 +1,5 @@
 /* pages/entry/entry.wxss */
+button{
+    width: 200rpx;
+    margin-top: 300rpx;
+}

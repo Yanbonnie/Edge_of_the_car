@@ -3,7 +3,7 @@
 <view class='containBox'>
     <view class='nav'>
         <view class='flexL' bindtap='showCover' data-index="1">{{locateCity}}</view>
-        <view class='flexR' bindtap='showCover' data-index="2">{{currentBrand?currentBrand:'品牌'}}</view>
+        <view class='flexR' bindtap='showCover' data-index="2">{{currentBrand.name?currentBrand.name:'品牌'}}</view>
     </view>
     <view class='index'>
         <view class='line'></view>

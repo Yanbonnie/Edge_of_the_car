@@ -1,10 +1,11 @@
 // pages/index2/index2.js.js
 const app = getApp();
-const { globalData: { REQUEST, openid } } = app;
+const { globalData: { REQUEST, key } } = app;
+import { methodsArr} from '../../utils/pageCom.js';
 import qqmap from '../../utils/map.js';
 import Sort from '../../utils/city_sort';   //城市排序
 import { indexData, brands } from '../../utils/data.js';
-let arr2 = [
+let arr2 = [ //cityName
     { "id": "v1", "cityName": "北京" },
     { "id": "v2", "cityName": "上海" },
     { "id": "v5", "cityName": "天津" },
@@ -16,7 +17,7 @@ let arr2 = [
 ];
 let str = Sort.pySegSort(arr2);
 
-let brandList = Sort.pySegSort(brands); 
+// let brandList = Sort.pySegSort(brands); 
 Page({
     /**
      * 页面的初始数据
@@ -26,7 +27,7 @@ Page({
         locateCity: '',     //当前城市
         cityState: false,   //是否显示城市弹框
         brandState:false,
-        brandList:brandList,
+        brandList:[],
         currentBrand:'',
         tabIndex:1,
         staffinfo: [],  //员工列表
@@ -40,17 +41,15 @@ Page({
      */
     onLoad: function (options) {
         this.getAddress();
-        
-        /*let staffinfo = indexData.filter(item=>{
-            return item.type == 'jg'
-        });
-        this.setData({ staffinfo})*/
-        this.getStaff(1)
+        this.getStaff(1);
+        this.getBrand(key);
     },
+    ...methodsArr,
     //获取员工列表
     getStaff(e){
         const { index } = e.currentTarget ? e.currentTarget.dataset : { index : 1 };
         const { page } = e.currentTarget ? e.currentTarget.dataset : { page : 1 } ;
+
         this.setData({
             tabIndex: index
         })
@@ -58,12 +57,13 @@ Page({
             title: '加载中...',
         })
         REQUEST('GET','getStaff',{
-            openid,
+            openid: app.globalData.openid,
             type: index,
-            page
+            page,
+            key
         }).then(res=>{
             wx.hideLoading();
-            const { staffinfo } = res;
+            const staffinfo = res.data;
             this.setData({
                 staffinfo
             })
@@ -80,28 +80,6 @@ Page({
             url: `/pages/chat/chat/staff_openid=${openid}`,
         })
     },
-    //tab切换
-    /*changeTab(e) {
-        const { index } = e.currentTarget.dataset;
-        let list = [];
-        if (index == 0) {
-            list = indexData.filter(item => {
-                return item.type == 'jg'
-            });
-        } else if (index == 1) {
-            list = indexData.filter(item => {
-                return item.type == 'pj'
-            });
-        } else {
-            list = indexData.filter(item => {
-                return item.type == 'zh'
-            });
-        }
-        this.setData({
-            tabIndex: index,
-            list
-        })
-    },*/
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
@@ -171,25 +149,11 @@ Page({
         })
         wx.setStorageSync('locatecity', { city: cityName, time: new Date().getTime() });
     },
-    //选择品牌
-    brandTap(e){
-        console.log(e)
-        const name = e.detail.name;
-        this.setData({
-            currentBrand: name,
-            brandState:false
-        })
-    },
     //关闭地址选择
     closeCityHandle() {
         this.setData({
             cityState: false
         })
     },
-    //关闭品牌框
-    closeBrandHandle(){
-        this.setData({
-            brandState: false
-        })
-    }
+    
 })

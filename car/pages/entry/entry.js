@@ -14,6 +14,14 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        let openid = wx.getStorageSync('openid');
+        app.globalData.openid = openid;
+        if(openid){
+            wx.reLaunch({
+                url: '/pages/index2/index2',
+            })
+            return;
+        }
         this.getUserInfo().then(res=>{   //判断授权按钮是否显示
             if(!res.success){
                 this.setData({
@@ -21,7 +29,6 @@ Page({
                 })
             }
         })
-
         if(app.globalData.userInfo) {
             this.loginHandle(app.globalData.userInfo);          
         } else {
@@ -39,8 +46,7 @@ Page({
         
         if (e.detail.userInfo) {
             // const { iv, encryptedData } = e.detail.userInfo;
-            console.log("点击了允许授权按钮");
-            this.loginHandle(e.detail.userInfo)
+            this.loginHandle(e.detail)
             //用户按了允许授权按钮
         } else {
             //用户按了拒绝按钮
@@ -73,7 +79,6 @@ Page({
     },
     //获取用户的全部信息
     getAllUserInfo(code, iv, encryptedData) {
-        
         const { key } = app.globalData;
         REQUEST('GET', 'userLogin',{
             code,
@@ -81,6 +86,7 @@ Page({
             encryptedData,
             key
         },true).then(res=>{  //成功
+            wx.setStorageSync('openid', res.data.openid);
             app.globalData.openid = res.data.openid;
             wx.reLaunch({
                 url: '/pages/index2/index2',

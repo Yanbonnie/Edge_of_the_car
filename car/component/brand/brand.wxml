@@ -14,7 +14,7 @@
                             <text>{{item.cityName}}</text>
                         </view>
                         <view class='brandStyle'>
-                            <text catchtap='brandTap' data-name="{{brand_item}}" class="brand_item" wx:for="{{item.list}}" wx:for-index="brandindex" wx:key="{{brandindex}}" wx:for-item="brand_item">{{brand_item}}</text>
+                            <text catchtap='brandTap' data-name="{{brand_item}}" class="brand_item" wx:for="{{item.sublevel}}" wx:for-index="brandindex" wx:key="{{brandindex}}" wx:for-item="brand_item">{{brand_item.name}}</text>
                         </view>
                     </view>
                     

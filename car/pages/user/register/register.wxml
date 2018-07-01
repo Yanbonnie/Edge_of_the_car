@@ -6,13 +6,13 @@
         <image src='/assets/images/picture.jpg'></image>
     </view>
     <view class='form'>
-        <form>
+        <form bindsubmit="formSubmit">
             <view class='form-item'>
                 <view class='iconBox'>
                     <image src='/assets/images/form_1.png'></image>
                 </view>
                 <view class='itemBox'>
-                    <input placeholder="姓名"/>
+                    <input placeholder="姓名" name="name" />
                 </view>
             </view>
             <view class='form-item'>
@@ -20,7 +20,15 @@
                     <image src='/assets/images/form_2.png'></image>
                 </view>
                 <view class='itemBox'>
-                    <input placeholder="手机"/>
+                    <input placeholder="手机" name="mobile" />
+                </view>
+            </view>
+            <view class='form-item'>
+                <view class='iconBox'>
+                    <image src='/assets/images/form_11.png'></image>
+                </view>
+                <view class='itemBox'>
+                    <input placeholder="城市" name="city" value="{{city.city}}"/>
                 </view>
             </view>
             <view class='form-item'>
@@ -28,7 +36,7 @@
                     <image src='/assets/images/form_3.png'></image>
                 </view>
                 <view class='itemBox'>
-                    <input placeholder="公司名"/>
+                    <input placeholder="公司名" name="company" />
                 </view>
             </view>
             <view class='form-item'>
@@ -36,7 +44,7 @@
                     <image src='/assets/images/form_4.png'></image>
                 </view>
                 <view class='itemBox'>
-                    <input placeholder="公司地址"/>
+                    <input placeholder="公司地址" name="address" />
                 </view>
             </view>
             <view class='form-item'>
@@ -44,15 +52,15 @@
                     <image src='/assets/images/form_5.png'></image>
                 </view>
                 <view class='itemBox'>
-                    <input placeholder="职务"/>
+                    <input placeholder="职务" name="duties" />
                 </view>
             </view>
             <view class='form-item'>
                 <view class='iconBox'>
                     <image src='/assets/images/form_6.png'></image>
                 </view>
-                <view class='itemBox'>
-                    <input placeholder="品牌"/>
+                <view class='itemBox pictureBox' bindtap='showPinPai'>
+                    <view class='placeholder text'>{{currentBrand ? currentBrand.name : '选择品牌'}}</view>
                 </view>
             </view>
             <view class='form-item'>
@@ -60,47 +68,49 @@
                     <image src='/assets/images/form_9.png'></image>
                 </view>
                 <view class='itemBox pictureBox' bindtap='selectStyle'>
-                    <view class='placeholder text'>{{selectIndex ? itemList[selectIndex] : '归属'}}</view>
+                    <view class='placeholder text'>{{selectIndex || selectIndex == 0 ? itemList[selectIndex] : '归属'}}</view>
                 </view>
             </view>
             <view class='form-item'>
                 <view class='iconBox'>
                     <image src='/assets/images/form_10.png'></image>
                 </view>
-                 <view class='itemBox pictureBox'>
+                <view wx:if="{{photo}}" class='itemBox pictureBox hasPic'>
+                    <view class='picture' data-id="1" bindtap='chooseImgHandle'>
+                        <image class='image' src='{{photo}}'></image>
+                    </view>
+                </view>
+                <view wx:else class='itemBox pictureBox'  data-id="1" bindtap='chooseImgHandle'>
                     <view>
                         <text class='placeholder'>上传生活照</text>
                     </view>
                     <view class='iconR'>
                         <image src='/assets/images/camer.png' class='camer'></image>
                     </view>
-                </view> 
-                <!-- <view class='itemBox pictureBox hasPic'>
-                    <view class='picture'>
-                        <image class='image' src='/assets/images/picture.jpg'></image>
-                    </view>
-                    <view class='picture'>
-                        <image class='image' src='/assets/images/add.png'></image>
-                    </view>
-                </view> -->
+                </view>
             </view>
+
+
             <view class='form-item'>
                 <view class='iconBox'>
                     <image src='/assets/images/form_7.png'></image>
                 </view>
-                <!-- <view class='itemBox pictureBox'>
+                <view class='itemBox pictureBox' wx:if="{{!driver_pic}}" data-id="2" bindtap='chooseImgHandle'>
                     <view>
-                        <text class='placeholder'>上传驾驶证</text>
+                        <text class='placeholder'>上传驾驶证正反面</text>
                     </view>
                     <view class='iconR'>
                         <image src='/assets/images/camer.png' class='camer'></image>
                     </view>
-                </view> -->
-                <view class='itemBox pictureBox hasPic'>
+                </view>
+                <view class='itemBox pictureBox hasPic' wx:if="{{driver_pic}}">
                     <view class='picture'>
-                        <image class='image' src='/assets/images/picture.jpg'></image>
+                        <image class='image' data-id="2" data-index="0" bindtap='chooseImgHandle' src='{{driver_pic[0]}}'></image>
                     </view>
-                    <view class='picture'>
+                    <view class='picture' data-id="2" data-index="1" bindtap='chooseImgHandle' wx:if="{{driver_pic.length>1}}">
+                        <image class='image' src='{{driver_pic[1]}}'></image>
+                    </view>
+                    <view class='picture' data-id="2" data-index="1" bindtap='chooseImgHandle' wx:if="{{driver_pic.length == 1}}">
                         <image class='image' src='/assets/images/add.png'></image>
                     </view>
                 </view>
@@ -109,7 +119,7 @@
                 <view class='iconBox'>
                     <image src='/assets/images/form_8.png'></image>
                 </view>
-                <view class='itemBox pictureBox'>
+                <view class='itemBox pictureBox' wx:if="{{!organization_pic}}" data-id="3" bindtap='chooseImgHandle'>
                     <view>
                         <text class='placeholder'>上传组织机构代码</text>
                     </view>
@@ -117,7 +127,19 @@
                         <image src='/assets/images/camer.png' class='camer'></image>
                     </view>
                 </view>
+                <view class='itemBox pictureBox hasPic' wx:else>
+                    <view class='picture' data-id="3" bindtap='chooseImgHandle'>
+                        <image class='image' src='{{organization_pic}}'></image>
+                    </view>
+                </view>
+            </view>
+            <view class='btnBox'>
+                <button formType="submit">提交</button>
             </view>
         </form>
     </view>
+</view>
+
+<view class='cityCover' wx:if="{{brandState}}">
+    <brandlist citylist="{{brandList}}" bindbrandtap='brandTap' bindcloseBrand="closeBrandHandle"></brandlist>
 </view>

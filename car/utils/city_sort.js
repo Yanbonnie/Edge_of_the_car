@@ -50,6 +50,7 @@ module.exports={
             };
             arr.forEach((v,k)=>{   //当前元素，下标
                 let LetterFirst = codefans_net_CC2PY(v.cityName)[0].charAt(0);
+                // let LetterFirst = codefans_net_CC2PY(v.name)[0].charAt(0);
                 if (LetterFirst == item){
                     curr.data.push(v) 
                 }

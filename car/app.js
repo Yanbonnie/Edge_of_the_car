@@ -1,7 +1,7 @@
 //app.js
 const { methodsArr } = require('./utils/pageCom');
 const { REQUEST } = require('./utils/util');
-const key = '21ed62ad89c8b67d1a1172d4411a0c21';
+const key = 'V1zi7iUbaMaTHwy2aK';
 App({
   onLaunch: function () {
     // 获取用户信息

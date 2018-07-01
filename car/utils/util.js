@@ -17,12 +17,13 @@ const formatNumber = n => {
 
 //接口域名统一配置
 const Config = {
-    reqUrl: 'https://xnt.xhwxpos.com/sznt/wxapp/Index/'
+    reqUrl: 'https://api.rencheyuan.com/wxapp/index/'
 }
 
 //接口地址
 const URL = {
-    "userLogin": "userLogin",                                //用户登录
+    'postRegister':'postRegister',                           //用户注册
+    "userLogin": "userLogin.html",                           //用户登录
     "getBrand": "getBrand",                                  //获取品牌接⼝
     "getCity":"getCity",                                     //获取城市接口
     "getStaff":"getStaff",                                   //获取员工列表
@@ -37,12 +38,13 @@ const URL = {
 //请求接口封装
 const REQUEST = (method, url, data, err = false) => {   //err->true  需要对失败进行特殊处理
     return new Promise((resolve, reject) => {
+        // console.log(Config.reqUrl + URL[url])
         wx.request({
             method,
-            url: Config.reqUrl + url,
+            url: Config.reqUrl + URL[url],
             data,
             success: res => {
-                console.log(res)
+                // console.log(res)
                 if (res.data.status == 0) {
                     resolve(res.data);
                 } else {
