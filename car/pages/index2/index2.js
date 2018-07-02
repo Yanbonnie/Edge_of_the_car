@@ -2,6 +2,7 @@
 const app = getApp();
 const { globalData: { REQUEST, key } } = app;
 import { methodsArr} from '../../utils/pageCom.js';
+const { cityArr, brandArr } = methodsArr;
 import qqmap from '../../utils/map.js';
 import Sort from '../../utils/city_sort';   //城市排序
 import { indexData, brands } from '../../utils/data.js';
@@ -44,7 +45,8 @@ Page({
         this.getStaff(1);
         this.getBrand(key);
     },
-    ...methodsArr,
+    ...brandArr,
+    ...cityArr,
     //获取员工列表
     getStaff(e){
         const { index } = e.currentTarget ? e.currentTarget.dataset : { index : 1 };
@@ -140,20 +142,6 @@ Page({
         }
         
     },
-    //选择地址
-    cityTap(e) {
-        const cityName = e.detail.cityname;
-        this.setData({
-            locateCity: cityName,
-            cityState: false
-        })
-        wx.setStorageSync('locatecity', { city: cityName, time: new Date().getTime() });
-    },
-    //关闭地址选择
-    closeCityHandle() {
-        this.setData({
-            cityState: false
-        })
-    },
+    
     
 })

@@ -27,8 +27,8 @@
                 <view class='iconBox'>
                     <image src='/assets/images/form_11.png'></image>
                 </view>
-                <view class='itemBox'>
-                    <input placeholder="城市" name="city" value="{{city.city}}"/>
+                <view class='itemBox'  bindtap='showCover' data-index="1">
+                    <input placeholder="城市"  name="city" value="{{locateCity}}" />
                 </view>
             </view>
             <view class='form-item'>
@@ -59,7 +59,7 @@
                 <view class='iconBox'>
                     <image src='/assets/images/form_6.png'></image>
                 </view>
-                <view class='itemBox pictureBox' bindtap='showPinPai'>
+                <view class='itemBox pictureBox'  bindtap='showCover' data-index="2">
                     <view class='placeholder text'>{{currentBrand ? currentBrand.name : '选择品牌'}}</view>
                 </view>
             </view>
@@ -80,7 +80,7 @@
                         <image class='image' src='{{photo}}'></image>
                     </view>
                 </view>
-                <view wx:else class='itemBox pictureBox'  data-id="1" bindtap='chooseImgHandle'>
+                <view wx:else class='itemBox pictureBox' data-id="1" bindtap='chooseImgHandle'>
                     <view>
                         <text class='placeholder'>上传生活照</text>
                     </view>
@@ -105,11 +105,11 @@
                 </view>
                 <view class='itemBox pictureBox hasPic' wx:if="{{driver_pic}}">
                     <view class='picture'>
-                        <image class='image' data-id="2" data-index="0" bindtap='chooseImgHandle' src='{{driver_pic[0]}}'></image>
+                        <image class='image' data-id="2" data-index="0" bindtap='chooseImgHandle' src='{{driver_pic}}'></image>
                     </view>
-                    <view class='picture' data-id="2" data-index="1" bindtap='chooseImgHandle' wx:if="{{driver_pic.length>1}}">
+                    <!-- <view class='picture' data-id="2" data-index="1" bindtap='chooseImgHandle' wx:if="{{driver_pic.length>1}}">
                         <image class='image' src='{{driver_pic[1]}}'></image>
-                    </view>
+                    </view> -->
                     <view class='picture' data-id="2" data-index="1" bindtap='chooseImgHandle' wx:if="{{driver_pic.length == 1}}">
                         <image class='image' src='/assets/images/add.png'></image>
                     </view>
@@ -138,6 +138,10 @@
             </view>
         </form>
     </view>
+</view>
+
+<view class='cityCover' wx:if="{{cityState}}">
+    <citylist citylist="{{citylist}}" bindcitytap='cityTap' bindcloseCity="closeCityHandle"></citylist>
 </view>
 
 <view class='cityCover' wx:if="{{brandState}}">
