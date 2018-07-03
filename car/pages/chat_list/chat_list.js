@@ -1,6 +1,6 @@
 // pages/chat_list/chat_list.js
 const app = getApp();
-const { globalData: { REQUEST, openid } } = app;
+const { globalData: { REQUEST, openid ,key} } = app;
 Page({
 
     /**
@@ -20,8 +20,9 @@ Page({
     getAdvisor(){
         const { page }  = this.data;
         REQUEST('GET','getAdvisor',{
-            openid,
-            page
+            openid:app.globalData.openid,
+            page,
+            key
         }).then(res=>{
             this.setData({
                 list:res.data
@@ -31,8 +32,9 @@ Page({
     goChat(e){
         const { staff_openid } = e.currentTarget.dataset;
         REQUEST('GET', 'readMsg',{
-            openid,
-            staff_openid
+            openid:app.globalData.openid,
+            staff_openid,
+            key
         }).then(res=>{
             wx.navigateTo({
                 url: `/pages/chat/chat?staff_openid=${staff_openid}`,

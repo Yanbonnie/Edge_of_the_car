@@ -1,6 +1,6 @@
 // pages/comment/comment.js
 const app = getApp();
-const { globalData:{methodsArr,REQUEST,openid} } = app;
+const { globalData:{methodsArr,REQUEST,openid,key} } = app;
 let keywords = ['服务热情','有责任心','非常专业','回复及时','态度诚恳','有亲和力','很有耐心']; 
 Page({
 
@@ -28,18 +28,25 @@ Page({
             keyword
         })
     },
+    ...methodsArr,
     //用户进行评价的接口
     postEstimate(){
         const staff_openid = this.data.info.openid;
         const { selectKeyword, score, content } = this.data;
-        
+        wx.showLoading({
+            title: '提交中...',
+            icon:'none',
+            mask:true
+        })
         REQUEST('POST','postEstimate',{
             staff_openid,
-            openid,
+            openid:app.globalData.openid,
             score,
             keyword: selectKeyword,
-            content
+            content,
+            key
         }).then(res=>{
+            wx.hideLoading();
             //成功回到评价列表页
             wx.navigateBack({
                 delta:1
@@ -77,7 +84,7 @@ Page({
     changeStar(e) {
         const { index } = e.currentTarget.dataset;
         this.setData({
-            score: index + 1
+            score: Number(index) + 1
         })
     },
     /**
@@ -128,5 +135,5 @@ Page({
     onShareAppMessage: function () {
 
     },
-    ...methodsArr
+    
 })

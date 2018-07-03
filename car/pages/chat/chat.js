@@ -39,9 +39,10 @@ Page({
         })
     },
     //到达评论列表页面
-    commentHandle() {
+    commentHandle(e) {
+        const { openid } = e.currentTarget.dataset;
         wx.navigateTo({
-            url: '/pages/comment_list/comment_list',
+            url: `/pages/comment_list/comment_list?staff_openid=${openid}`,
         })
     },
     /**

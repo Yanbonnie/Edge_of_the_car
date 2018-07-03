@@ -18,11 +18,11 @@
         <image class='rz_icon' src='/assets/images/rz_logo.png'></image>
         <view class='info'>
             <view class='photo'>
-                <image style='width:120rpx;height:120rpx;' mode="acceptFill"  src="{{info.headpic}}"></image>
+                <image style='width:120rpx;height:120rpx;' mode="acceptFill"  src="{{info.photo}}"></image>
             </view>
             <view>
                 <view class='title'>
-                    <text>{{info.name}}</text>
+                    <text>{{info.realname}}</text>
                     <image wx:if="{{info.is_auth == 1}}" src='/assets/images/rz_icon.png'></image>
                 </view>
                 <text class='txt'>{{info.duties}}</text>

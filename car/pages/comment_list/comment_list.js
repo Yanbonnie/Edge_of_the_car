@@ -1,6 +1,6 @@
 // pages/comment_list/comment_list.js
 const app = getApp();
-const { globalData:{methodsArr,REQUEST,openid} } = app;
+const { globalData:{methodsArr,REQUEST,openid,key} } = app;
 import { commentList } from '../../utils/data.js';
 Page({
 
@@ -30,16 +30,20 @@ Page({
         this.setData({
             commentList:list
         });*/
+        this.getStaffEstimate();
     },
     ...methodsArr,
     getStaffEstimate(){
         const { staff_openid } = this.data;
         REQUEST('GET','getStaffEstimate',{
             staff_openid,
-            openid
+            openid:app.globalData.openid,
+            key
         }).then(res=>{
             this.setData({
-                info: res.staffinfo
+                info: res.staffinfo,
+                estimate: res.estimate,
+                keyword: res.keyword
             })
         })
     },

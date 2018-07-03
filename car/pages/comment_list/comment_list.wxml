@@ -5,16 +5,16 @@
     <view class='panel'>
         <view class='list-item'>
             <view class='flexL'  bindtap='goCard'>
-                <image style='width:100rpx;height:100rpx;' mode="aspectFill" src="{{info.headpic}}"></image>
+                <image style='width:100rpx;height:100rpx;' mode="aspectFill" src="{{info.photo}}"></image>
             </view>
             <view class='flexC'  bindtap='goCard'>
-                <view class='title'>{{info.name}}</view>
+                <view class='title'>{{info.realname}}</view>
                 <view class='num'>
                     <text>{{info.popularity}}</text>
                     人找他咨询
                 </view>
                 <view class='starBox'>
-                    <view class='star'>
+                    <view class='star' wx:if="{{info.logo}}">
                         <image src='{{info.logo}}' style='width:50rpx;height:30rpx;' mode="aspectFit" class='star'></image>
                     </view>
                     <text class='shengl'>{{info.company}}</text>
@@ -27,12 +27,8 @@
         <view class='flexBox'>
             <view class='flexWrap comment'>
                 <view class='flexL'>评价：
-                    <image src='/assets/images/start_on.png'></image>
-                    <image src='/assets/images/start_on.png'></image>
-                    <image src='/assets/images/start_on.png'></image>
-                    <image src='/assets/images/start_on.png'></image>
-                    <image src='/assets/images/start_on.png'></image>
-                    <image src='/assets/images/start_on.png'></image>
+                    <image src='/assets/images/start_on.png' wx:for="{{info.evaluate}}" wx:key="{{index}}"></image>
+                    <image src='/assets/images/start.png'  wx:for="{{5-info.evaluate}}" wx:key="{{index}}"></image>
                     <text class='fontRed margin-left10'>{{info.evaluate}}</text>
                 </view>
             </view>

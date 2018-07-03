@@ -35,7 +35,7 @@ Page({
     //到达专属顾问页面
     goAdviser(){
         wx.navigateTo({
-            url: `/pages/chat_list/chat_list`,
+            url: '/pages/chat_list/chat_list',
         })
     },
     /**

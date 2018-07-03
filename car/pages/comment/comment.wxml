@@ -14,7 +14,7 @@
                     人找他咨询
                 </view>
                 <view class='starBox'>
-                    <view class='star'>
+                    <view class='star' wx:if="{{info.logo}}">
                         <image style="width:50rpx;height:30rpx;" mode="aspectFit" src='{{info.logo}}' class='star'></image>
                     </view>
                     <text class='shengl'>{{info.company}}</text>
@@ -60,7 +60,7 @@
         </view>
     </view>
     <view class='info_box'>
-        <view class='send_comment'>
+        <view class='send_comment' bindtap='postEstimate'>
             <view>发表评价</view>
         </view>
     </view>

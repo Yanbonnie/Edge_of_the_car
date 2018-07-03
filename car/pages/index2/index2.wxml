@@ -51,7 +51,7 @@
                                 人找他咨询
                             </view>
                             <view class='starBox'>
-                                <view class='star'>
+                                <view class='star' wx:if="{{item.logo}}">
                                     <image style="width:50rpx;height:30rpx;" mode="aspectFit" src='{{item.logo}}' class='star'></image>
                                 </view>
                                 <text class='shengl'>{{item.company}}</text>

@@ -1,6 +1,6 @@
 // pages/card/card.js
 const app = getApp();
-const { globalData: { methodsArr, REQUEST, openid } } = app;
+const { globalData: { methodsArr, REQUEST, openid,key } } = app;
 Page({
     /**
      * 页面的初始数据
@@ -19,6 +19,7 @@ Page({
             // info: wx.getStorageSync('info')
             staff_openid            
         })
+        this.getStaffVisitingCard();
     },
     ...methodsArr,
     //获取卡片信息
@@ -26,7 +27,8 @@ Page({
         const { staff_openid } = this.data;
         REQUEST('GET','getStaffVisitingCard',{
             staff_openid,
-            openid
+            openid:app.globalData.openid,
+            key
         }).then(res=>{
             this.setData({
                 info:res
