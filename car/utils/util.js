@@ -23,6 +23,7 @@ const Config = {
 //接口地址
 const URL = {
     'postRegister':'postRegister',                           //用户注册
+    'uploadFile':'uploadFile',                               //上传图片
     "userLogin": "userLogin.html",                           //用户登录
     "getBrand": "getBrand",                                  //获取品牌接⼝
     "getCity":"getCity",                                     //获取城市接口
@@ -67,5 +68,7 @@ const REQUEST = (method, url, data, err = false) => {   //err->true  需要对�
 
 module.exports = {
     formatTime: formatTime,
-    REQUEST
+    REQUEST,
+    Config,
+    URL
 }
