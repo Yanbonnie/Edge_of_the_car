@@ -1,6 +1,6 @@
 // pages/chat/chat.js
 const app = getApp();
-const { globalData: { methodsArr, REQUEST, openid} } = app;
+const { globalData: { methodsArr, REQUEST, openid,key} } = app;
 Page({
 
     /**
@@ -21,14 +21,16 @@ Page({
             // info: wx.getStorageSync('info')
             staff_openid
         })
+        this.getStaffDetails();
     },
     ...methodsArr,
     //获取详情页面
     getStaffDetails(){
         const { staff_openid } = this.data;
         REQUEST('GET','getStaffDetails',{
-            openid,
+            openid:app.globalData.openid,
             staff_openid,
+            key
         }).then(res=>{
             this.setData({
                 info: res.staffinfo,

@@ -77,7 +77,7 @@ Page({
         const { openid } = e.currentTarget.dataset;
         // wx.setStorageSync('info', this.data.list[index]);  //设置缓存
         wx.navigateTo({
-            url: `/pages/chat/chat/staff_openid=${openid}`,
+            url: `/pages/chat/chat?staff_openid=${openid}`,
         })
     },
     /**

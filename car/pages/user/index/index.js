@@ -1,6 +1,6 @@
 // pages/user/index/index.js
 const app = getApp();
-const { globalData: { REQUEST, openid } } = app;
+const { globalData: { REQUEST, openid,key } } = app;
 Page({
 
     /**
@@ -19,15 +19,17 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.getMyInfo();
     },
     //获取我的个人用户接口
     getMyInfo(){
         REQUEST('GET','getMyInfo',{
-            openid
+            openid:app.globalData.openid,
+            key
         }).then(res=>{
-            const { is_sign, integral, name, headpic, popularity, company  } = res;
-            this.setData({ is_sign, integral, name, headpic, popularity, company } )
+            const { is_sign} = res;
+            const { integral, realname, photo, headpic, popularity, company  } = res.info;
+            this.setData({ is_sign, integral, name: realname, headpic, popularity, company } )
         })
     },
     //到达专属顾问页面

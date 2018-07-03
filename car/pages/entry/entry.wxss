@@ -1,5 +1,5 @@
 /* pages/entry/entry.wxss */
 button{
-    width: 200rpx;
+    width: 250rpx;
     margin-top: 300rpx;
 }

@@ -16,7 +16,7 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#6c87ef",
-        "navigationBarTitleText": "人车缘",
+        "navigationBarTitleText": "自学小程序",
         "navigationBarTextStyle": "white"
     },
     "tabBar": {
