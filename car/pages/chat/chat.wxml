@@ -3,7 +3,7 @@
     <view class='blank'></view>
     <view class='radiusTop'></view>
     <view class='panel'>
-        <view class='list-item' bindtap='goCard'>
+        <view class='list-item' data-openid="{{info.openid}}" bindtap='goCard'>
             <view class='flexL'>
                 <image style='width:100rpx;height:100rpx;' mode="aspectFill" src="{{info.photo}}"></image>
             </view>

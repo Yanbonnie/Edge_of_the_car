@@ -31,7 +31,7 @@ Page({
             key
         }).then(res=>{
             this.setData({
-                info:res
+                info: res.staffinfo
             })
         })
     },    
@@ -40,9 +40,10 @@ Page({
             url: '/pages/index2/index2',
         })
     },
-    goChat() {
+    goChat(e) {
+        const { openid } = e.currentTarget.dataset;
         wx.navigateTo({
-            url: '/pages/chat/chat',
+            url: `/pages/chat/chat?staff_openid=${openid}`,
         })
     },
     /**

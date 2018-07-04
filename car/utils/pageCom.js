@@ -3,9 +3,10 @@ import Sort from './city_sort';   //城市排序
 module.exports = {
     methodsArr:{
         //到达个人中心页面
-        goCard(){
+        goCard(e){
+            const { openid } = e.currentTarget.dataset;
             wx.reLaunch({
-                url: '/pages/card/card',
+                url: `/pages/card/card?staff_openid=${openid}`,
             })
         },
         //拨打电话

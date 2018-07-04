@@ -47,7 +47,7 @@
         <view bindtap='makePhoneHandle' data-phone="{{info.mobile}}">
             <image style='width:50rpx;height:60rpx;' src='/assets/images/phone_icon.png'></image>
         </view>
-        <view bindtap='goChat'>
+        <view bindtap='goChat' data-openid="{{info.openid}}" >
             <image style='width:60rpx;height:49rpx;' src='/assets/images/wechat.png'></image>
         </view>
     </view>
