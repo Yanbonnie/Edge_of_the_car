@@ -43,7 +43,7 @@ Page({
 
     },
     bindGetuserinfo: function (e) {  //没有授权的时候进入页面
-        
+        console.log(123)
         if (e.detail.userInfo) {
             // const { iv, encryptedData } = e.detail.userInfo;
             this.loginHandle(e.detail)

@@ -217,6 +217,11 @@ Page({
             address, city, company, duties, mobile, name, brand_id, type, photo: photoFile, organization_pic: organization_picFile, driver_pic: driver_picFile, key, openid: app.globalData.openid
         }).then(res=>{
             console.log(res)
+            if(res.status == 0){
+                wx.navigateTo({
+                    url: '/pages/user/index/index',
+                })                
+            }
         })
     },
     /**

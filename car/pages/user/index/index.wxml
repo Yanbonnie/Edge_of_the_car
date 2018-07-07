@@ -4,7 +4,7 @@
     <view class='radiusTop'></view>
     <view class='list-item big'>
         <view class='flexL'>
-            <image src="{{headpic}}"></image>
+            <image src="{{photo}}"></image>
         </view>
         <view class='flexC'>
             <view class='title'>{{name}}</view>

@@ -10,7 +10,7 @@ Page({
         is_sign:0,       //是否已注册
         integral:0,      //用户积分 
         name:'',         //员工姓名 
-        headpic:'',      //头像链接 
+        photo:'',      //头像链接 
         popularity:0,    //人气 
         company:'',      //公司
     },
@@ -28,8 +28,8 @@ Page({
             key
         }).then(res=>{
             const { is_sign} = res;
-            const { integral, realname, photo, headpic, popularity, company  } = res.info;
-            this.setData({ is_sign, integral, name: realname, headpic, popularity, company } )
+            const { integral, realname, photo, popularity, company  } = res.info;
+            this.setData({ is_sign, integral, name: realname, photo, popularity, company } )
         })
     },
     //到达专属顾问页面
