@@ -65,6 +65,7 @@
         </view>
     </view>
     <view class='info_box'>
+        <view class='add' bindtap='addImg'>+</view>
         <input placeholder="请输入" />
         <view>
             <text>发送</text>

@@ -91,6 +91,17 @@
 .chat .info_box view{
     flex-basis: 200rpx;
 }
+.chat .info_box .add{
+    flex-basis: 40rpx;
+    height: 40rpx;
+    border-radius: 100%;
+    line-height: 35rpx;
+    font-size: 40rpx;
+    color: #acacac;
+    border: 1rpx #acacac solid;
+    text-align: center;
+    margin-left: 10rpx;
+}
 .chat .info_box view text{
     border: 1rpx #6b86ee solid;
     border-radius: 40rpx;
