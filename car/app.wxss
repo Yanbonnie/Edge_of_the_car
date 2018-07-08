@@ -150,7 +150,7 @@ text,view{
 
 .list-item .flexR .btn{
     border: 1px #5979e4 solid;
-    display: block;
+    display: inline-block;
     line-height: 50rpx;
     border-radius: 40rpx;
     color: #5979e4;
@@ -182,3 +182,25 @@ text,view{
     height: 80rpx;
     margin-top: 20%;
 } 
+
+.noneButton{
+    padding: 0 !important;
+    font-size: 24rpx;
+    background: none;
+}
+
+.noMsg{
+    width: 200rpx;
+    height: 200rpx;
+    display: block;
+    margin: 0 auto;
+}
+.noMsg image{
+    display: block;
+    width: 100%;
+    height: 200rpx;
+}
+.noMsg text{
+    text-align: center;
+    display: block;
+}

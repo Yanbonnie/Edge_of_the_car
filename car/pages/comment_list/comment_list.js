@@ -19,6 +19,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        console.log(123)
         const { staff_openid } = options;
         this.setData({
             // info: wx.getStorageSync('info')
@@ -31,6 +32,11 @@ Page({
             commentList:list
         });*/
         this.getStaffEstimate();
+    },
+    onShow: function (options){
+        console.log(options)
+        this.getStaffEstimate();
+        console.log(456)
     },
     ...methodsArr,
     getStaffEstimate(){

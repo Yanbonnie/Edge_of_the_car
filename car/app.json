@@ -1,7 +1,8 @@
 {
     "pages": [
         "pages/entry/entry",        
-        "pages/index2/index2",
+        "pages/index/index",
+        "pages/mien/index",
         "pages/user/register/register",        
         "pages/bargain/bargain",
         "pages/user/index/index",
@@ -9,8 +10,8 @@
         "pages/comment/comment",
         "pages/comment_list/comment_list",
         "pages/chat/chat",
-        "pages/chat_list/chat_list",
-        "pages/index/index"
+        "pages/service/service",
+        "pages/chat_list/chat_list"
         
     ],
     "window": {
@@ -24,7 +25,7 @@
         "selectedColor": "#6683eb",
         "list": [
             {
-                "pagePath": "pages/index2/index2",
+                "pagePath": "pages/index/index",
                 "iconPath": "/assets/images/home.png",
                 "selectedIconPath": "/assets/images/home_active.png",
                 "text": "首页"

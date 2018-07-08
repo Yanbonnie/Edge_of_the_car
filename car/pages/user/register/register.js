@@ -37,7 +37,7 @@ Page({
         brandState:false,
         brandList: [],
         currentBrand: '',
-        citylist: str,    //城市列表
+        citylist: [],    //城市列表
         locateCity: '',     //当前城市
         cityState: false,   //是否显示城市弹框
     },
@@ -47,6 +47,7 @@ Page({
      */
     onLoad: function(options) {
         this.getBrand(key);
+        this.getCityData(key);
         let city = wx.getStorageSync('locatecity');
         this.setData({
             locateCity:city.city
@@ -218,9 +219,13 @@ Page({
         }).then(res=>{
             console.log(res)
             if(res.status == 0){
-                wx.navigateTo({
-                    url: '/pages/user/index/index',
-                })                
+                console.log("注册成功了")
+                // wx.navigateTo({
+                //     url: '/pages/user/index/index',
+                // })        
+                wx.navigateBack({
+                    delta: 1
+                })        
             }
         })
     },

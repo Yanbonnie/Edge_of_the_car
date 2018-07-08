@@ -4,19 +4,16 @@
     <view class='radiusTop'></view>
     <view class='panel'>
         <view class='list-item'>
-            <view class='flexL' bindtap='goCard'>
-                <image style="width:100rpx;height:100rpx;" mode="aspectFill" src='{{info.headpic}}' ></image>
+            <view class='flexL' bindtap='goCard' data-openid="{{info.openid}}">
+                <image style="width:100rpx;height:100rpx;" mode="aspectFill" src='{{info.photo}}' ></image>
             </view>
-            <view class='flexC'  bindtap='goCard'>
-                <view class='title'>{{info.name}}</view>
+            <view class='flexC'  bindtap='goCard' data-openid="{{info.openid}}">
+                <view class='title'>{{info.realname}}</view>
                 <view class='num'>
                     <text>{{info.popularity}}</text>
                     人找他咨询
                 </view>
                 <view class='starBox'>
-                    <view class='star' wx:if="{{info.logo}}">
-                        <image style="width:50rpx;height:30rpx;" mode="aspectFit" src='{{info.logo}}' class='star'></image>
-                    </view>
                     <text class='shengl'>{{info.company}}</text>
                 </view>
             </view>
@@ -38,7 +35,7 @@
             <view class='chatList'>
                 <view class='title'>对他的印象 </view>
                 <view class='labelBox'>
-                    <view wx:for="{{keyword}}">
+                    <view wx:for="{{keyword}}" wx:key="{{index}}">
                         <text bindtap='selectKeyword' 
                             data-text="{{item}}" 
                             data-index="{{index}}" 

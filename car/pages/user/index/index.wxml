@@ -8,9 +8,12 @@
         </view>
         <view class='flexC'>
             <view class='title'>{{name}}</view>
-            <view class='num'>
+            <view class='num' wx:if="{{popularity || popularity == 0}}">
                 <text>{{popularity}}</text>
                 人找他咨询
+            </view>
+            <view class='num' wx:else>
+                普通用户
             </view>
             <view class='starBox'>
                 <!-- <view class='star'>
@@ -29,16 +32,16 @@
         </view> 
     </view>
     <view class='menuBox'>
-        <view class='active' bindtap='goAdviser'>
+        <view bindtap='goAdviser'>
             <image src='/assets/images/menu_1.png'></image>
         </view>
-        <view>
+        <view bindtap='goMien'>
             <image src='/assets/images/menu_2.png'></image>
         </view>
         <view>
             <image src='/assets/images/menu_3.png'></image>
         </view>
-        <view>
+        <view bindtap='goService'>
             <image src='/assets/images/menu_4.png'></image>
         </view>
     </view>

@@ -8,6 +8,8 @@ Page({
      */
     data: {
         hasUserInfo:true,
+        comfrom:'',
+        staff_openid:''
     },
 
     /**
@@ -15,11 +17,30 @@ Page({
      */
     onLoad: function (options) {
         let openid = wx.getStorageSync('openid');
+        const { comfrom, staff_openid } = options;
+        if (comfrom){
+            this.setData({
+                comfrom,
+                staff_openid
+            })
+        }        
         app.globalData.openid = openid;
         if(openid){
-            wx.reLaunch({
-                url: '/pages/index2/index2',
-            })
+            setTimeout(()=>{
+                if (comfrom == 1) {
+                    wx.reLaunch({
+                        url: `/pages/card/card?staff_openid=${staff_openid}`,
+                    })
+                } else if (comfrom == 2) {
+                    wx.reLaunch({
+                        url: `/pages/chat/chat?staff_openid=${staff_openid}`,
+                    })
+                } else {
+                    wx.reLaunch({
+                        url: '/pages/index/index',
+                    })
+                } 
+            }, 200)
             return;
         }
         this.getUserInfo().then(res=>{   //判断授权按钮是否显示
@@ -43,9 +64,11 @@ Page({
 
     },
     bindGetuserinfo: function (e) {  //没有授权的时候进入页面
-        console.log(123)
         if (e.detail.userInfo) {
             // const { iv, encryptedData } = e.detail.userInfo;
+            this.setData({
+                hasUserInfo:true
+            })
             this.loginHandle(e.detail)
             //用户按了允许授权按钮
         } else {
@@ -88,9 +111,22 @@ Page({
         },true).then(res=>{  //成功
             wx.setStorageSync('openid', res.data.openid);
             app.globalData.openid = res.data.openid;
-            wx.reLaunch({
-                url: '/pages/index2/index2',
-            })
+            const { comfrom, staff_openid} = this.data;
+            setTimeout(() => {
+                if (comfrom == 1) {
+                    wx.reLaunch({
+                        url: `/pages/card/card?staff_openid=${staff_openid}`,
+                    })
+                } else if (comfrom == 2) {
+                    wx.reLaunch({
+                        url: `/pages/chat/chat?staff_openid=${staff_openid}`,
+                    })
+                } else {
+                    wx.reLaunch({
+                        url: '/pages/index/index',
+                    })
+                }
+            }, 200)
         }).catch(res=>{   //失败
             wx.showModal({
                 title: '',

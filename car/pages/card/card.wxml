@@ -2,24 +2,26 @@
 <view class='card'>
     <view class='blank'></view>
     <view class='radiusTop'></view>
-    <image class="bg" src="/assets/images/card.jpg"></image>
-    <view class='logo'><image style='width:100rpx;height:100rpx;' mode='acceptFill' src='{{info.logo}}'></image></view>
+    <image class="bg" src="{{info.photo}}" mode="aspectFit"></image>
+    <!-- <view class='logo'><image style='width:100rpx;height:100rpx;' mode='acceptFill' src='{{info.logo}}'></image></view> -->
     <view class='tabNav'>
         <view bindtap='goIndex'>
             <image src='/assets/images/home_white.png' style='width:35rpx;height:35rpx;'></image>
             <text>首页</text>
-        </view> 
-        <view>
-            <image src='/assets/images/share.png' style='width:35rpx;height:35rpx;'></image>
-            <text>分享</text>
+        </view>
+        <view bindtap='shareHandle'>
+            <!-- <text>分享</text> -->
+            <button class='noneButton shareBtn' open-type='share'>
+                <image src='/assets/images/share.png' style='width:35rpx;height:35rpx;'></image>
+                分享</button>
         </view>
     </view>
     <view class='infoBox'>
         <image class='rz_icon' src='/assets/images/rz_logo.png'></image>
         <view class='info'>
-            <view class='photo'>
+            <!-- <view class='photo'>
                 <image style='width:120rpx;height:120rpx;' mode="acceptFill"  src="{{info.photo}}"></image>
-            </view>
+            </view> -->
             <view>
                 <view class='title'>
                     <text>{{info.realname}}</text>
@@ -31,10 +33,10 @@
         <view class='address'>
             <view class='item'>
                 <image style='width:27rpx;height:27rpx;' src='/assets/images/address.png'></image>
-                {{info.detailAddress}}
+                {{info.company}}
             </view>
             <view class='item'>
-                <image  style='width:22rpx;height:29rpx;'  src='/assets/images/dingwei.png'></image>
+                <image style='width:22rpx;height:29rpx;' src='/assets/images/dingwei.png'></image>
                 {{info.address}}
             </view>
         </view>
@@ -47,7 +49,7 @@
         <view bindtap='makePhoneHandle' data-phone="{{info.mobile}}">
             <image style='width:50rpx;height:60rpx;' src='/assets/images/phone_icon.png'></image>
         </view>
-        <view bindtap='goChat'>
+        <view bindtap='goChat' data-openid="{{info.openid}}">
             <image style='width:60rpx;height:49rpx;' src='/assets/images/wechat.png'></image>
         </view>
     </view>

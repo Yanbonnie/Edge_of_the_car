@@ -9,9 +9,9 @@ Page({
     data: {
         is_sign:0,       //是否已注册
         integral:0,      //用户积分 
-        name:'',         //员工姓名 
-        photo:'',      //头像链接 
-        popularity:0,    //人气 
+        name:'',     //员工姓名 
+        photo:'',       //头像链接 
+        popularity:'',    //人气 
         company:'',      //公司
     },
 
@@ -19,6 +19,9 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        // this.getMyInfo();
+    },
+    onShow(){
         this.getMyInfo();
     },
     //获取我的个人用户接口
@@ -28,8 +31,21 @@ Page({
             key
         }).then(res=>{
             const { is_sign} = res;
-            const { integral, realname, photo, popularity, company  } = res.info;
-            this.setData({ is_sign, integral, name: realname, photo, popularity, company } )
+            let name = '';
+            let phot = ''
+            if(is_sign == 0){
+                this.setData({
+                    name:res.info.nickname,
+                    photo:res.info.avatar
+                })
+            }else{
+                this.setData({
+                    name: res.info.realname,
+                    photo: res.info.photo
+                })
+            }
+            const { integral, popularity, company } = res.info;
+            this.setData({ is_sign, integral: (integral || integral == 0) ? integral : '', popularity: (popularity || popularity == 0) ? popularity:null, company: company ? company:'' } )
         })
     },
     //到达专属顾问页面
@@ -38,24 +54,20 @@ Page({
             url: '/pages/chat_list/chat_list',
         })
     },
+    goMien(){
+        wx.navigateTo({
+            url: '/pages/mien/index',
+        })
+    },
+    goService(){
+        wx.navigateTo({
+            url: '/pages/service/service',
+        })
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
 
     },
 

@@ -82,7 +82,7 @@
                 </view>
                 <view wx:else class='itemBox pictureBox' data-id="1" bindtap='chooseImgHandle'>
                     <view>
-                        <text class='placeholder'>上传生活照</text>
+                        <text class='placeholder'>上传工装照</text>
                     </view>
                     <view class='iconR'>
                         <image src='/assets/images/camer.png' class='camer'></image>

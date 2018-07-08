@@ -1,6 +1,6 @@
 <!--pages/entry/entry.wxml-->
 <!-- <text>pages/entry/entry.wxml</text> -->
-<view class='loading' wx:if="{{hasUserInfo}}">
+<view class='loading' wx:if="{{hasUserInfo}}"> <!--wx:if="{{hasUserInfo}}"-->
     <image class="loadingImg" src="/assets/images/loading-bars.svg"></image>
 </view>
 <button wx:if="{{!hasUserInfo}}" open-type='getUserInfo' bindgetuserinfo="bindGetuserinfo">进入首页</button>

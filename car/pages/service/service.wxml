@@ -3,44 +3,12 @@
     <view class='blank'></view>
     <view class='radiusTop'></view>
     <view class='panel'>
-        <view class='list-item' >
-            <view class='flexL' data-openid="{{info.openid}}"  bindtap='goCard'>
+        <view class='list-item'>
+            <view class='flexL' data-openid="{{info.openid}}" bindtap='goCard'>
                 <image style='width:100rpx;height:100rpx;' mode="aspectFill" src="{{info.photo}}"></image>
             </view>
-            <view class='flexC' data-openid="{{info.openid}}"  bindtap='goCard'>
+            <view class='flexC' data-openid="{{info.openid}}" bindtap='goCard'>
                 <view class='title'>{{info.realname}}</view>
-                <view class='num'>
-                    <text>{{info.popularity}}</text>
-                    人找他咨询
-                </view>
-                <view class='starBox'>
-                    <view class='star' wx:if="{{info.logo}}">
-                        <image src='{{info.logo}}' style='width:50rpx;height:30rpx;' mode="aspectFit" class='star'></image>
-                    </view>
-                    <text class='shengl'>{{info.company}}</text>
-                </view>
-            </view>
-            <view class='flexR' >
-                 <!-- <text bindtap='shareHandle'>推荐TA</text>  -->
-                 <button class='noneButton btn ' open-type="share">推荐他</button> 
-            </view>
-        </view>
-        <view class='flexBox'>
-            <view class='flexWrap' bindtap='makePhoneHandle' data-phone="{{info.mobile}}">
-                <view class='flexL' >电话：{{info.mobile}}</view>
-                <view class='flexR'><image src="/assets/images/phone.png"></image></view>
-            </view>
-            <view class='flexWrap comment' data-openid="{{info.openid}}"  bindtap='commentHandle'>
-                <view class='flexL'>评价：
-                    <image src='/assets/images/start_on.png' wx:for="{{info.evaluate}}" wx:key="{{index}}"></image>
-                    <image src='/assets/images/start.png'  wx:for="{{5-info.evaluate}}" wx:key="{{index}}"></image>
-                    <!-- <image src='/assets/images/start_on.png'></image>
-                    <image src='/assets/images/start_on.png'></image>
-                    <image src='/assets/images/start_on.png'></image>
-                    <image src='/assets/images/start_on.png'></image> -->
-                    <text class='fontRed margin-left10'>{{info.evaluate}}</text>
-                </view>
-                <view class='flexR'><image style='width:17rpx;' src="/assets/images/right_icon.png"></image></view>
             </view>
         </view>
     </view>
@@ -93,12 +61,13 @@
                     <text>2018-04-27 08:38</text>
                 </view> -->
 
-            </scroll-view>   
+            </scroll-view>
         </view>
     </view>
     <view class='info_box'>
-        <view class='add' bindtap='addImg'>+</view>
-        <input placeholder="请输入" value="{{inputValue}}" bindinput="bindKeyInput" />
-        <view bindtap="submitTo"><text>发送</text></view>
+        <input placeholder="请输入" />
+        <view>
+            <text>发送</text>
+        </view>
     </view>
 </view>

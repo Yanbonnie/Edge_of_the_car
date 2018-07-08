@@ -4,10 +4,10 @@
     <view class='radiusTop'></view>
     <view class='panel'>
         <view class='list-item'>
-            <view class='flexL'  bindtap='goCard'>
+            <view class='flexL'  bindtap='goCard' data-openid="{{info.openid}}">
                 <image style='width:100rpx;height:100rpx;' mode="aspectFill" src="{{info.photo}}"></image>
             </view>
-            <view class='flexC'  bindtap='goCard'>
+            <view class='flexC' data-openid="{{info.openid}}"  bindtap='goCard'>
                 <view class='title'>{{info.realname}}</view>
                 <view class='num'>
                     <text>{{info.popularity}}</text>
@@ -37,11 +37,9 @@
     <view class='chat_view'>
         <view class='chitchat'>
             <scroll-view class='chatList' scroll-y="true" style='height:100%;'>
-                <view class='labelBox'>
-                    <view wx:for="{{keyword}}"><text>{{item.text+''+item.count}}</text></view>
-                    <!-- <view><text>有责任心142</text></view>
-                    <view><text>非常专业185</text></view> -->
-                </view>
+                 <view class='labelBox'>
+                    <view wx:for="{{keyword}}" wx:key="{{index}}"><text>{{item.text+''+item.count}}</text></view>
+                </view> 
                 <!-- <view class='labelBox'>
                     <view><text>回复及时452</text></view>
                     <view><text>态度诚恳988</text></view>
@@ -50,14 +48,14 @@
                 <view class='comment_list'>
                     <view class='comment-item' wx:for="{{estimate}}" wx:key="index" wx:for-item="commentItem">
                         <view class='flexL'>
-                            <text>{{wxname.userName}}</text>
+                            <text>{{commentItem.wxname}}</text>
                             <view>
-                                <view><image wx:for="{{commentItem.start}}" wx:key="{{index}}" src="/assets/images/start_on.png"></image></view>
-                                <view style="padding-left:10rpx;">{{wxname.score}}</view>
+                                <view><image wx:for="{{commentItem.score}}" wx:key="{{index}}" src="/assets/images/start_on.png"></image></view>
+                                <view style="padding-left:10rpx;">{{commentItem.content}}</view>
                             </view>
                         </view>
                         <view class='flexR'>
-                            {{commentItem.time}}
+                            {{commentItem.at_time}}
                         </view>
                     </view>
                 </view>
