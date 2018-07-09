@@ -83,26 +83,6 @@ Page({
             url: `/pages/chat/chat?staff_openid=${openid}`,
         })
     },
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
-    },
     //初始化定位
     getAddress() {
         let cityOrTime = wx.getStorageSync('locatecity') || {},
@@ -127,26 +107,47 @@ Page({
             });
             //把获取的定位和获取的时间放到本地存储
             wx.setStorageSync('locatecity', { city: val, time: new Date().getTime() });
-        }).catch(res=>{
+        }).catch(res => {
             this.setData({
-                locateCity:'定位失败'
+                locateCity: '定位失败'
             })
         });
     },
     //显示地址弹框
     showCover(e) {
-        const {index} = e.currentTarget.dataset;
-        if(index == 1){
+        const { index } = e.currentTarget.dataset;
+        if (index == 1) {
             this.setData({
                 cityState: true
             })
-        }else{
+        } else {
             this.setData({
                 brandState: true
             })
         }
-        
+
     },
-    
-    
+    /**
+     * 页面相关事件处理函数--监听用户下拉动作
+     */
+    onPullDownRefresh: function () {
+
+    },
+
+    /**
+     * 页面上拉触底事件的处理函数
+     */
+    onReachBottom: function () {
+
+    },
+
+    /**
+     * 用户点击右上角分享
+     */
+    onShareAppMessage: function () {
+        return {
+            title: '哇这个给马云修车的帅哥火了月入几十万',
+            path: `/pages/entry/entry`
+        }
+    },
 })

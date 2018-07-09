@@ -33,7 +33,7 @@
                         </view>
                     </view>
                 </view>
-                <view class='noMsg' wx:if="staffinfo.length == 0">
+                <view class='noMsg' wx:if="{{staffinfo.length == 0}}">
                     <image mode="aspectFit" src='/assets/images/404.png'></image>
                     <text>暂无数据</text>
                 </view>

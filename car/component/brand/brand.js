@@ -18,7 +18,8 @@ Component({
         coverState: false,
         //下面是热门城市数据，模拟数据
         newcity: ['北京', '上海', '广州', '深圳', '成都', '杭州'],
-        locateCity: ''
+        locateCity: '',
+        activeIndex:null
     },
     methods: {
         //点击城市
@@ -56,6 +57,12 @@ Component({
         //关闭弹框
         closeTap() {
             this.triggerEvent('closeBrand');
+        },
+        brandTitle(e){
+            const { index } = e.currentTarget.dataset;
+            this.setData({
+                activeIndex:index
+            })
         }
     },
     ready() {

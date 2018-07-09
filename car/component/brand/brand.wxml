@@ -9,13 +9,13 @@
                     <view class='city_first_letter' id='{{letterItem.letter}}' wx:if="{{letterItem.data.length > 0}}">{{letterItem.letter}}</view>
                     <view class='city_name' wx:for='{{letterItem.data}}' wx:key='this' data-types='list'  data-index='{{index}}' data-val='{{item}}'>
                     
-                        <view class='cityname_item'>
+                        <view class='cityname_item' catchtap='brandTitle' data-index = '{{item.id}}'>
                             <view class='logo'><image style="width:50rpx;height:30rpx;" mode="aspectFit" src="{{item.logo}}"></image></view>
                             <text>{{item.cityName}}</text>
                         </view>
-                        <view class='brandStyle'>
+                         <view class='brandStyle' wx:if="{{activeIndex == item.sublevel[0].brand_id}}">
                             <text catchtap='brandTap' data-name="{{brand_item}}" class="brand_item" wx:for="{{item.sublevel}}" wx:for-index="brandindex" wx:key="{{brandindex}}" wx:for-item="brand_item">{{brand_item.name}}</text>
-                        </view>
+                        </view> 
                     </view>
                     
                 </block>

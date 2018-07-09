@@ -8,8 +8,7 @@ Page({
      */
     data: {
         hasUserInfo:true,
-        comfrom:'',
-        staff_openid:''
+        share_query:''
     },
 
     /**
@@ -17,25 +16,20 @@ Page({
      */
     onLoad: function (options) {
         let openid = wx.getStorageSync('openid');
-        const { comfrom, staff_openid } = options;
-        if (comfrom){
+        const { share_query } = options;
+        if (share_query){
             this.setData({
-                comfrom,
-                staff_openid
+                share_query
             })
         }        
         app.globalData.openid = openid;
         if(openid){
             setTimeout(()=>{
-                if (comfrom == 1) {
-                    wx.reLaunch({
-                        url: `/pages/card/card?staff_openid=${staff_openid}`,
-                    })
-                } else if (comfrom == 2) {
-                    wx.reLaunch({
-                        url: `/pages/chat/chat?staff_openid=${staff_openid}`,
-                    })
-                } else {
+                if (share_query){
+                    let url = decodeURIComponent(share_query);
+                    console.log(url)
+                    wx.reLaunch({url})
+                }else {
                     wx.reLaunch({
                         url: '/pages/index/index',
                     })
@@ -111,16 +105,12 @@ Page({
         },true).then(res=>{  //成功
             wx.setStorageSync('openid', res.data.openid);
             app.globalData.openid = res.data.openid;
-            const { comfrom, staff_openid} = this.data;
+            const { shareQuery} = this.data;
             setTimeout(() => {
-                if (comfrom == 1) {
-                    wx.reLaunch({
-                        url: `/pages/card/card?staff_openid=${staff_openid}`,
-                    })
-                } else if (comfrom == 2) {
-                    wx.reLaunch({
-                        url: `/pages/chat/chat?staff_openid=${staff_openid}`,
-                    })
+                if (share_query) {
+                    let url = decodeURIComponent(share_query);
+                    console.log(url)
+                    wx.reLaunch({ url })
                 } else {
                     wx.reLaunch({
                         url: '/pages/index/index',

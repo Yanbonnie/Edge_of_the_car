@@ -58,16 +58,4 @@ Page({
     onReachBottom: function () {
 
     },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-        const { staff_openid } = this.data;
-        console.log(`/page/entry/entry?staff_openid=${staff_openid}&comfrom=2`)
-        return {
-            title: '哇这个给马云修车的帅哥火了月入几十万',
-            path: `/pages/entry/entry?staff_openid=${staff_openid}&comfrom=2`
-        }
-    }
 })

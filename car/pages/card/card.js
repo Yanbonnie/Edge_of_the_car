@@ -65,9 +65,10 @@ Page({
     },
     onShareAppMessage: function () {
         const { staff_openid } = this.data;
+        let url = encodeURIComponent(`/pages/card/card?staff_openid=${staff_openid}`)
         return {
             title: '哇这个给马云修车的帅哥火了月入几十万',
-            path: `/pages/entry/entry?staff_openid=${staff_openid}&comfrom=1`
+            path: `/pages/entry/entry?share_query=${url}`
         }
     }
 })

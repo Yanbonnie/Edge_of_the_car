@@ -222,10 +222,10 @@ Page({
      */
     onShareAppMessage: function () {
         const { staff_openid } = this.data;
-        console.log(`/page/entry/entry?staff_openid=${staff_openid}&comfrom=2`)
+        let url = encodeURIComponent(`/pages/chat/chat?staff_openid=${staff_openid}`) 
         return {
             title: '哇这个给马云修车的帅哥火了月入几十万',
-            path: `/pages/entry/entry?staff_openid=${staff_openid}&comfrom=2`
+            path: `/pages/entry/entry?share_query=${url}`
         }
     }
 })
