@@ -50,47 +50,47 @@ Page({
         this.getStaffDetails();
     },
     ...methodsArr,
-    onShow(){
-        var that = this;
-        this.webSocket();
-        SocketTask.onOpen(res => {
-            socketOpen = true;
-            console.log('监听 WebSocket 连接打开事件。', res)
-        })
-        SocketTask.onClose(onClose => {
-            console.log('监听 WebSocket 连接关闭事件。', onClose)
-            socketOpen = false;
-            this.webSocket()
-        })
-        SocketTask.onError(onError => {
-            console.log('监听 WebSocket 错误。错误信息', onError)
-            socketOpen = false
-        })
-        SocketTask.onMessage(onMessage => {
-            console.log('监听WebSocket接受到服务器的消息事件。服务器返回的消息', JSON.parse(onMessage.data))
-            var onMessage_data = JSON.parse(onMessage.data)
-            if (onMessage_data.cmd == 1) {
-                that.setData({
-                    link_list: text
-                })
-                console.log(text, text instanceof Array)
-                // 是否为数组
-                if (text instanceof Array) {
-                    for (var i = 0; i < text.length; i++) {
-                        text[i]
-                    }
-                } else {
+    // onShow(){
+    //     var that = this;
+    //     this.webSocket();
+    //     SocketTask.onOpen(res => {
+    //         socketOpen = true;
+    //         console.log('监听 WebSocket 连接打开事件。', res)
+    //     })
+    //     SocketTask.onClose(onClose => {
+    //         console.log('监听 WebSocket 连接关闭事件。', onClose)
+    //         socketOpen = false;
+    //         this.webSocket()
+    //     })
+    //     SocketTask.onError(onError => {
+    //         console.log('监听 WebSocket 错误。错误信息', onError)
+    //         socketOpen = false
+    //     })
+    //     SocketTask.onMessage(onMessage => {
+    //         console.log('监听WebSocket接受到服务器的消息事件。服务器返回的消息', JSON.parse(onMessage.data))
+    //         var onMessage_data = JSON.parse(onMessage.data)
+    //         if (onMessage_data.cmd == 1) {
+    //             that.setData({
+    //                 link_list: text
+    //             })
+    //             console.log(text, text instanceof Array)
+    //             // 是否为数组
+    //             if (text instanceof Array) {
+    //                 for (var i = 0; i < text.length; i++) {
+    //                     text[i]
+    //                 }
+    //             } else {
 
-                }
-                that.data.allContentList.push({ is_ai: true, text: onMessage_data.body });
-                that.setData({
-                    allContentList: that.data.allContentList
-                })
-                that.bottom()
-            }
-        })
+    //             }
+    //             that.data.allContentList.push({ is_ai: true, text: onMessage_data.body });
+    //             that.setData({
+    //                 allContentList: that.data.allContentList
+    //             })
+    //             that.bottom()
+    //         }
+    //     })
 
-    },
+    // },
     webSocket: function () {
         // 创建Socket
         SocketTask = wx.connectSocket({
