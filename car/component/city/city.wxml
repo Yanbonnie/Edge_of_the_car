@@ -1,7 +1,14 @@
 <view class='city_box' style='{{styles}}'>
     <view class='blank'></view>
     <view class='radiusTop'></view>
-    <view class='title'><text class='select_txt'>选择城市</text><text catchtap='closeTap'>X</text></view>    
+    <view class='title'>
+    <!-- <text class='select_txt'>选择城市</text> -->
+        <view class='city_search'>
+            <input placeholder="请输入城市名" confirm-type="search"/>
+            <text class='search'>搜索</text>
+        </view>
+        <text class='close' catchtap='closeTap'>X</text>
+    </view>    
     <view class='city_left'>
         <scroll-view scroll-y="true" style='width:100%;height:90vh;' scroll-into-view='{{cityListId}}'>
             <!-- <view class='city_locate' data-types='locate' catchtap='cityTap'>
@@ -9,6 +16,7 @@
                 <text class='city_locate_text' style='{{!locateCity&&"color:#33b9ff;"}}'>{{locateCity||'点击定位'}}</text>
             </view>
             <view class='national' data-types='national' catchtap='cityTap'>全国</view> -->
+            
             <view class='new_city'>
                  <view class='new_city_title'>一 热门城市 一<text>HOT</text></view> 
                 <view class='new_city_box'>

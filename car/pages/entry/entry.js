@@ -105,7 +105,7 @@ Page({
         },true).then(res=>{  //成功
             wx.setStorageSync('openid', res.data.openid);
             app.globalData.openid = res.data.openid;
-            const { shareQuery} = this.data;
+            const { share_query } = this.data;
             setTimeout(() => {
                 if (share_query) {
                     let url = decodeURIComponent(share_query);

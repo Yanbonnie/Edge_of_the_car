@@ -40,7 +40,7 @@ page {
     padding-left: 30rpx;
     width: 45%;
     position: absolute;
-    top: 80rpx;
+    top: 50rpx;
     right: 0;
     display: flex;
     justify-content: space-between;
@@ -71,7 +71,7 @@ page {
     width: 90%;
     left: 5%;
     top: 550rpx;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.5);
     min-height: 100rpx;
     border-radius: 20rpx;
 }
@@ -89,6 +89,7 @@ page {
     display: flex;
     /* justify-content: space-between; */
     align-items: center;
+
 }
 
 .infoBox .info .photo {
@@ -105,10 +106,14 @@ page {
 .infoBox .info .title {
     display: flex;
     font-size: 24rpx;
+    color: #000;
 }
-
+.infoBox .info .title  text{
+    color: #000;
+}
 .infoBox .info .txt {
     font-size: 20rpx;
+    color: #000;
 }
 
 .infoBox .info .title image {
@@ -120,10 +125,12 @@ page {
 .address {
     padding-top: 50rpx;
     padding: 30rpx 20rpx 50rpx;
+    
 }
 
 .address .item {
     padding: 5rpx 0;
+    color: #000;
 }
 
 .btnBox {

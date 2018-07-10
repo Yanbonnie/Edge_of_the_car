@@ -38,7 +38,7 @@
 
 } 
 .title{
-    flex-basis: 80rpx;
+    /* flex-basis: 80rpx;
     height: 80rpx;
     line-height: 70rpx;
     background: #fff;
@@ -48,11 +48,14 @@
     z-index: 1;
     border-top-left-radius: 20rpx;
     border-top-right-radius: 20rpx;
-    overflow: hidden;
+    overflow: hidden; */
+    display: flex;
 }
-.title text{
-    padding: 0 20rpx;
-}
+ .title .close{
+    padding: 10rpx 20rpx 0;
+    /* flex-basis: 200rpx;
+    text-align: right; */
+} 
 .select_txt{
     float: left;
     font-size: 28rpx;
@@ -176,4 +179,28 @@
   font-size: 50rpx;
   text-align: center;
   display: block;
+}
+.city_search{
+    display: flex;
+    align-items: center;
+    width: 70%;
+    margin:0 auto 20rpx;
+}
+.city_search input{
+    flex-grow: 1;
+    /* border: 1px #dedede solid; */
+    height: 50rpx;
+    box-sizing: border-box;
+    padding-left: 10px;
+    margin-right: 10rpx;
+    background: #f5f7ff;
+}
+.city_search .search{
+    flex-basis: 100rpx;
+    height:50rpx;
+    line-height: 50rpx;
+    background: #5978e3;
+    text-align: center;
+    color: #fff;
+    border-radius: 4rpx;
 }
