@@ -37,7 +37,7 @@ Page({
         brandState:false,
         brandList: [],
         currentBrand: '',
-        citylist: [],    //城市列表
+        citylist: [],       //城市列表
         locateCity: '',     //当前城市
         cityState: false,   //是否显示城市弹框
     },

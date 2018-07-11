@@ -3,7 +3,7 @@
     <!-- <view class='blank'></view>
     <view class='radiusTop'></view> -->
     <image class="bg" src="{{info.photo}}" mode='aspectFill'></image>
-    <!-- <view class='logo'><image style='width:100rpx;height:100rpx;' mode='acceptFill' src='{{info.logo}}'></image></view> -->
+     <view class='logo'><image style='width:100rpx;height:100rpx;' mode='acceptFill' src='{{info.logo}}'></image></view> 
     <view class='tabNav'>
         <view bindtap='goIndex'>
             <image src='/assets/images/home_white.png' style='width:35rpx;height:35rpx;'></image>
@@ -17,7 +17,7 @@
         </view>
     </view>
     <view class='infoBox'>
-        <image class='rz_icon' src='/assets/images/rz_logo.png'></image>
+        <!-- <image class='rz_icon' src='/assets/images/rz_logo.png'></image> -->
         <view class='info'>
             <!-- <view class='photo'>
                 <image style='width:120rpx;height:120rpx;' mode="acceptFill"  src="{{info.photo}}"></image>

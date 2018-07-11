@@ -68,9 +68,9 @@ page {
 
 .infoBox {
     position: absolute;
-    width: 90%;
-    left: 5%;
-    top: 550rpx;
+    width: 80%;
+    left: 10%;
+    top: 650rpx;
     background: rgba(255, 255, 255, 0.5);
     min-height: 100rpx;
     border-radius: 20rpx;
@@ -85,7 +85,7 @@ page {
 }
 
 .infoBox .info {
-    padding: 30rpx;
+    padding: 20rpx 0rpx 0rpx 20rpx;
     display: flex;
     /* justify-content: space-between; */
     align-items: center;
@@ -123,9 +123,8 @@ page {
 }
 
 .address {
-    padding-top: 50rpx;
-    padding: 30rpx 20rpx 50rpx;
-    
+    padding-top:20rpx 0rpx 0rpx 20rpx;
+    padding:20rpx 20rpx 20rpx;
 }
 
 .address .item {
