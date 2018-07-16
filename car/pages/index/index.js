@@ -45,7 +45,7 @@ Page({
         this.getStaff(1);
         this.getBrand(key);
         this.getCityData(key);
-        this.getLocate();
+        // this.getLocate();
     },
     ...brandArr,
     ...cityArr,
