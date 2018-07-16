@@ -45,6 +45,7 @@ Page({
         this.getStaff(1);
         this.getBrand(key);
         this.getCityData(key);
+        this.getLocate();
     },
     ...brandArr,
     ...cityArr,
@@ -105,6 +106,7 @@ Page({
             this.setData({
                 locateCity: val
             });
+            console.log(val)
             //把获取的定位和获取的时间放到本地存储
             wx.setStorageSync('locatecity', { city: val, time: new Date().getTime() });
         }).catch(res => {

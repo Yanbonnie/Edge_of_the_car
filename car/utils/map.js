@@ -2,8 +2,8 @@ const   wxqqmap = require('../libs/qqmap-wx-jssdk.min.js'),
         qqwxmap = new wxqqmap({
             key: 'GTDBZ-WFSRX-JOT4W-7WYBD-Z2CTO-7QBEM' // 必填，这里最好填自己申请的的
         });
-import  util from './util.js';
-const   qq = 'sdfsdf';
+// import  util from './util.js';
+// const   qq = 'sdfsdf';
 export default class qqmap {//获取定位信息
     getLocateInfo() {
         let that = this;
@@ -16,7 +16,7 @@ export default class qqmap {//获取定位信息
                         longitude: val.longitude
                     },
                     success: function (res) {
-                        // console.log(res);
+                        console.log(res);
                         resolve(res.result.address_component.city);//返回城市
                     },
                     fail: function (res) {
